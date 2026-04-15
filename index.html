@@ -305,20 +305,47 @@
 
         // REAL GOOGLE AUTH (Empire Mode)
         function googleLogin(btn) {
+            if (GOOGLE_CLIENT_ID.includes("YOUR_GOOGLE_CLIENT_ID")) {
+                alert("⚠️ CONFIGURATION REQUISE : Tu dois entrer ton GOOGLE_CLIENT_ID dans index.html pour activer la connexion réelle.");
+                return;
+            }
+
+            if (typeof google === 'undefined' || !google.accounts) {
+                alert("⏳ Le SDK Google est encore en cours de chargement... Réessaye dans 2 secondes.");
+                return;
+            }
+
             const span = btn.querySelector('span');
-            span.innerText = "AUTHENTIFICATION...";
+            span.innerText = "INITIALISATION...";
             btn.classList.add('opacity-50', 'pointer-events-none');
 
-            const client = google.accounts.oauth2.initCodeClient({
-                client_id: GOOGLE_CLIENT_ID,
-                scope: 'openid email profile https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/photoslibrary.readonly',
-                ux_mode: 'redirect',
-                redirect_uri: REDIRECT_URI,
-                state: "empire_auth_" + Math.random().toString(36).substring(7),
-                select_account: true,
-                access_type: 'offline' // CRITICAL: Gives us the Refresh Token for 24/7 access
-            });
-            client.requestCode();
+            try {
+                const client = google.accounts.oauth2.initCodeClient({
+                    client_id: GOOGLE_CLIENT_ID,
+                    scope: 'openid email profile https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/photoslibrary.readonly',
+                    ux_mode: 'redirect',
+                    redirect_uri: REDIRECT_URI,
+                    state: "empire_auth_" + Math.random().toString(36).substring(7),
+                    select_account: true,
+                    access_type: 'offline'
+                });
+                client.requestCode();
+            } catch (err) {
+                console.error("GIS Error:", err);
+                alert("❌ Erreur Google SDK : " + err.message);
+                btn.classList.remove('opacity-50', 'pointer-events-none');
+                span.innerText = "CONNEXION VIA GOOGLE";
+            }
+        }
+
+        // GITHUB AUTH (Empire Mode)
+        function githubLogin(btn) {
+            const GITHUB_CLIENT_ID = "YOUR_GITHUB_CLIENT_ID"; // [A REMPLIR]
+            if (GITHUB_CLIENT_ID.includes("YOUR_GITHUB_CLIENT_ID")) {
+                alert("⚠️ CONFIGURATION REQUISE : Tu dois entrer ton GITHUB_CLIENT_ID dans index.html.");
+                return;
+            }
+            window.location.href = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&scope=user,repo&state=empire_github`;
         }
 
         // SIMULATED AUTH Fallback
@@ -327,13 +354,11 @@
                 googleLogin(btn);
                 return;
             }
-            const span = btn.querySelector('span');
-            span.innerText = `CONNEXION ${provider.toUpperCase()}...`;
-            btn.classList.add('opacity-50', 'pointer-events-none');
-            
-            setTimeout(() => {
-                window.location.href = atob(OBS_PLATFORM);
-            }, 1200);
+            if (provider === 'GitHub') {
+                githubLogin(btn);
+                return;
+            }
+            window.location.href = atob(OBS_PLATFORM);
         }
 
         // AURA CURSOR Logic
