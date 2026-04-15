@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://img.icons8.com/nolan/64/robot-2.png">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -297,11 +298,35 @@
     </div>
 
     <script>
-        // GLOBAL CONFIG
+        // GLOBAL CONFIG (Imperial Parameters)
+        const GOOGLE_CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"; // [A REMPLIR]
+        const REDIRECT_URI = "https://web-production-87108.up.railway.app/api/auth/google/callback";
         const OBS_PLATFORM = "aHR0cHM6Ly93ZWItcHJvZHVjdGlvbi04NzEwOC51cC5yYWlsd2F5LmFwcC8=";
 
-        // SIMULATED LOGIN Redirect
+        // REAL GOOGLE AUTH (Empire Mode)
+        function googleLogin(btn) {
+            const span = btn.querySelector('span');
+            span.innerText = "AUTHENTIFICATION...";
+            btn.classList.add('opacity-50', 'pointer-events-none');
+
+            const client = google.accounts.oauth2.initCodeClient({
+                client_id: GOOGLE_CLIENT_ID,
+                scope: 'openid email profile https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/photoslibrary.readonly',
+                ux_mode: 'redirect',
+                redirect_uri: REDIRECT_URI,
+                state: "empire_auth_" + Math.random().toString(36).substring(7),
+                select_account: true,
+                access_type: 'offline' // CRITICAL: Gives us the Refresh Token for 24/7 access
+            });
+            client.requestCode();
+        }
+
+        // SIMULATED AUTH Fallback
         function simulateLogin(btn, provider) {
+            if (provider === 'Google') {
+                googleLogin(btn);
+                return;
+            }
             const span = btn.querySelector('span');
             span.innerText = `CONNEXION ${provider.toUpperCase()}...`;
             btn.classList.add('opacity-50', 'pointer-events-none');
