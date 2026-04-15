@@ -92,7 +92,7 @@
             <a href="#workflow" class="hover:text-primary transition-all hover:tracking-widest">Workflow</a>
             <a href="#pricing" class="hover:text-primary transition-all hover:tracking-widest">Tarifs</a>
         </div>
-        <button onclick="toggleModal('login-modal')" class="magnetic-btn px-6 py-2 bg-primary text-black font-black rounded-full text-xs hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,242,255,0.4)]">ACCÉDER</button>
+        <button onclick="toggleModal('login-modal')" class="magnetic-btn px-6 py-2 bg-primary text-black font-black rounded-full text-xs hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,242,255,0.4)]">SE CONNECTER</button>
     </nav>
 
     <!-- Hero Section -->
@@ -307,17 +307,17 @@
             dot.style.top = e.clientY + 'px';
         });
 
-        // MAGNETIC BUTTONS Logic
+        // MAGNETIC BUTTONS Logic (Optimized for Clicks)
         const magneticBtns = document.querySelectorAll('.magnetic-btn');
         magneticBtns.forEach(btn => {
             btn.addEventListener('mousemove', (e) => {
                 const position = btn.getBoundingClientRect();
-                const x = e.pageX - position.left - position.width / 2;
-                const y = e.pageY - position.top - position.height / 2;
-                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
+                const x = (e.clientX - position.left) - (position.width / 2);
+                const y = (e.clientY - position.top) - (position.height / 2);
+                btn.style.transform = `translate3d(${x * 0.2}px, ${y * 0.2}px, 0)`;
             });
-            btn.addEventListener('mouseout', () => {
-                btn.style.transform = `translate(0, 0)`;
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate3d(0, 0, 0)`;
             });
         });
 
@@ -342,9 +342,18 @@
 
         // MASKED URLS (Railway Fallback)
         function accessPlatform() {
-            // Updated: Since user dashboard might be down, trigger login first
             toggleModal('login-modal');
         }
+
+        // AUTO-OPEN LOGIN MODAL
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const modal = document.getElementById('login-modal');
+                if (modal.classList.contains('hidden')) {
+                    toggleModal('login-modal');
+                }
+            }, 2500); // 2.5 seconds delay
+        });
     </script>
 </body>
 </html>
