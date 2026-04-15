@@ -303,39 +303,25 @@
         const REDIRECT_URI = "https://web-production-87108.up.railway.app/api/auth/google/callback";
         const OBS_PLATFORM = "aHR0cHM6Ly93ZWItcHJvZHVjdGlvbi04NzEwOC51cC5yYWlsd2F5LmFwcC8=";
 
-        // REAL GOOGLE AUTH (Empire Mode)
+        // REAL GOOGLE AUTH (Empire Mode - Direct Redirect)
         function googleLogin(btn) {
-            if (GOOGLE_CLIENT_ID.includes("YOUR_GOOGLE_CLIENT_ID")) {
-                alert("⚠️ CONFIGURATION REQUISE : Tu dois entrer ton GOOGLE_CLIENT_ID dans index.html pour activer la connexion réelle.");
-                return;
-            }
-
-            if (typeof google === 'undefined' || !google.accounts) {
-                alert("⏳ Le SDK Google est encore en cours de chargement... Réessaye dans 2 secondes.");
-                return;
-            }
-
             const span = btn.querySelector('span');
-            span.innerText = "INITIALISATION...";
+            span.innerText = "REDIRECTION GOOGLE...";
             btn.classList.add('opacity-50', 'pointer-events-none');
 
-            try {
-                const client = google.accounts.oauth2.initCodeClient({
-                    client_id: GOOGLE_CLIENT_ID,
-                    scope: 'openid email profile https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/photoslibrary.readonly',
-                    ux_mode: 'redirect',
-                    redirect_uri: REDIRECT_URI,
-                    state: "empire_auth_" + Math.random().toString(36).substring(7),
-                    select_account: true,
-                    access_type: 'offline'
-                });
-                client.requestCode();
-            } catch (err) {
-                console.error("GIS Error:", err);
-                alert("❌ Erreur Google SDK : " + err.message);
-                btn.classList.remove('opacity-50', 'pointer-events-none');
-                span.innerText = "CONNEXION VIA GOOGLE";
-            }
+            const scopes = encodeURIComponent('openid email profile https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/photoslibrary.readonly');
+            
+            // Construction de l'URL OAuth2 officielle
+            const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
+                           `client_id=${GOOGLE_CLIENT_ID}&` +
+                           `redirect_uri=${encodeURIComponent(REDIRECT_URI)}&` +
+                           `response_type=code&` +
+                           `scope=${scopes}&` +
+                           `access_type=offline&` +
+                           `prompt=consent`;
+
+            // Envoi vers la page Google officielle
+            window.location.href = authUrl;
         }
 
         // GITHUB AUTH (Empire Mode)
