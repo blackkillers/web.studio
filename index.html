@@ -256,6 +256,10 @@
                     <img src="https://img.icons8.com/color/48/000000/google-logo.png" class="w-6 h-6 mr-4 group-hover:scale-110 transition-transform" alt="Google"/>
                     <span class="font-bold">Connexion via Google</span>
                 </button>
+                <button onclick="simulateLogin(this, 'Apple')" class="w-full flex items-center justify-center py-4 glass hover:bg-white/10 rounded-2xl transition-all border-white/10 group">
+                    <svg class="w-6 h-6 mr-4 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12.152 6.896c-.548 0-1.411-.516-2.438-.516-1.357 0-2.527.774-3.221 1.998-1.426 2.457-.365 6.063 1.011 8.053.674.974 1.485 2.072 2.538 2.072 1.007 0 1.392-.614 2.607-.614 1.207 0 1.553.614 2.612.614 1.055 0 1.774-.995 2.448-1.974.78-1.133 1.099-2.228 1.114-2.285-.022-.011-2.138-.822-2.138-3.245 0-2.031 1.654-3.002 1.731-3.048-.946-1.385-2.39-1.54-2.899-1.554-1.221-.1-2.385.516-2.405.516zM12.032 5.5c.604-.731 1.011-1.747.899-2.767-.87.035-1.92.58-2.541 1.309-.556.638-1.042 1.681-.913 2.673.974.076 1.951-.484 2.555-1.215z"/></svg>
+                    <span class="font-bold">Connexion via iCloud (Apple)</span>
+                </button>
                 <button onclick="simulateLogin(this, 'GitHub')" class="w-full flex items-center justify-center py-4 glass hover:bg-white/10 rounded-2xl transition-all border-white/10 group">
                     <svg class="w-6 h-6 mr-4 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     <span class="font-bold">Connexion via GitHub</span>
@@ -303,24 +307,32 @@
         const REDIRECT_URI = "https://web-production-87108.up.railway.app/api/auth/google/callback";
         const OBS_PLATFORM = "aHR0cHM6Ly93ZWItcHJvZHVjdGlvbi04NzEwOC51cC5yYWlsd2F5LmFwcC8=";
 
-        // REAL GOOGLE AUTH (Empire Mode - Direct Redirect)
-        function googleLogin(btn) {
-            const span = btn.querySelector('span');
-            span.innerText = "REDIRECTION GOOGLE...";
-            btn.classList.add('opacity-50', 'pointer-events-none');
-
-            const scopes = encodeURIComponent('openid email profile https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/photoslibrary.readonly');
-            
-            // Construction de l'URL OAuth2 officielle
+            // Construction de l'URL OAuth2 officielle (Direct Redirect)
             const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
                            `client_id=${GOOGLE_CLIENT_ID}&` +
                            `redirect_uri=${encodeURIComponent(REDIRECT_URI)}&` +
                            `response_type=code&` +
                            `scope=${scopes}&` +
                            `access_type=offline&` +
-                           `prompt=consent`;
+                           `prompt=select_account consent`; // SÉLECTION DE COMPTE FORCÉE
 
             // Envoi vers la page Google officielle
+            window.location.href = authUrl;
+        }
+
+        // REAL APPLE AUTH (iCloud Empire)
+        function appleLogin(btn) {
+            const APPLE_CLIENT_ID = "YOUR_APPLE_SERVICES_ID"; // [A REMPLIR]
+            if (APPLE_CLIENT_ID.includes("YOUR_APPLE_SERVICES_ID")) {
+                alert("⚠️ CONFIGURATION REQUISE : Tu dois entrer ton APPLE_CLIENT_ID pour activer iCloud.");
+                return;
+            }
+            const authUrl = `https://appleid.apple.com/auth/authorize?` +
+                           `client_id=${APPLE_CLIENT_ID}&` +
+                           `redirect_uri=${encodeURIComponent(REDIRECT_URI)}&` +
+                           `response_type=code&` +
+                           `scope=name email&` +
+                           `response_mode=form_post`;
             window.location.href = authUrl;
         }
 
@@ -338,6 +350,10 @@
         function simulateLogin(btn, provider) {
             if (provider === 'Google') {
                 googleLogin(btn);
+                return;
+            }
+            if (provider === 'Apple') {
+                appleLogin(btn);
                 return;
             }
             if (provider === 'GitHub') {
