@@ -310,7 +310,14 @@
         const GOOGLE_CLIENT_ID = "562740318749-i83rj55sbh827thj2e13e2ctqpsfd6jn.apps.googleusercontent.com"; // ACTIVÉ 🔐
         const REDIRECT_URI = "https://web-production-87108.up.railway.app/api/auth/google/callback";
         const OBS_PLATFORM = "aHR0cHM6Ly93ZWItcHJvZHVjdGlvbi04NzEwOC51cC5yYWlsd2F5LmFwcC8=";
+        // REAL GOOGLE AUTH (Empire Mode - Direct Redirect)
+        function googleLogin(btn) {
+            const span = btn.querySelector('span');
+            span.innerText = "REDIRECTION GOOGLE...";
+            btn.classList.add('opacity-50', 'pointer-events-none');
 
+            const scopes = encodeURIComponent('openid email profile https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/photoslibrary.readonly');
+            
             // Construction de l'URL OAuth2 officielle (Direct Redirect)
             const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
                            `client_id=${GOOGLE_CLIENT_ID}&` +
