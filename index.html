@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://img.icons8.com/nolan/64/robot-2.png">
+    
+    <!-- Financial Core SDKs -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AY8_H_vRQbhznTLNBbzeOLYMwkVS1aA16PCtk7ydE7avaGVylzvprh5fpT4KohuF63qK-BXBMnCJ0Gtg&currency=EUR&disable-funding=credit,card"></script>
+
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
         tailwind.config = {
@@ -199,7 +204,7 @@
                         <li class="flex items-center"><span class="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-4 text-xs">✓</span> Support Technique 24/7</li>
                         <li class="flex items-center"><span class="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-4 text-xs">✓</span> Connexion Telegram Alert</li>
                     </ul>
-                    <a href="https://www.paypal.com/paypalme/ilanhcohen/149" target="_blank" class="magnetic-btn w-full block text-center py-5 glass text-white font-black rounded-2xl hover:bg-white/10 transition-all border-white/20">S'ABONNER</a>
+                    <button onclick="openOrderModal('Créateur Elite', '149')" class="magnetic-btn w-full block text-center py-5 glass text-white font-black rounded-2xl hover:bg-white/10 transition-all border-white/20 uppercase tracking-widest">S'ABONNER</button>
                 </div>
                 
                 <!-- Leviathan Plan -->
@@ -218,7 +223,7 @@
                         <img src="https://img.icons8.com/color/48/000000/mastercard.png" class="h-8" alt="Mastercard"/>
                         <img src="https://img.icons8.com/color/48/000000/paypal.png" class="h-8" alt="PayPal"/>
                     </div>
-                    <a href="https://www.paypal.com/paypalme/ilanhcohen/1499" target="_blank" class="magnetic-btn w-full block text-center py-6 bg-black text-white font-black rounded-2xl hover:scale-105 transition-all text-xl shadow-2xl">ACQUÉRIR L'EMPIRE</a>
+                    <button onclick="openOrderModal('Leviathan V2', '1499')" class="magnetic-btn w-full block text-center py-6 bg-black text-white font-black rounded-2xl hover:scale-105 transition-all text-xl shadow-2xl uppercase tracking-tighter">ACQUÉRIR L'EMPIRE</button>
                 </div>
             </div>
         </div>
@@ -276,38 +281,75 @@
         </div>
     </div>
 
-    <!-- LEGAL MODAL -->
-    <div id="legal-modal" class="hidden fixed inset-0 z-[101] modal-overlay flex items-center justify-center p-6">
-        <div class="glass w-full max-w-2xl rounded-[3rem] p-12 border-primary/20 shadow-2xl relative max-h-[80vh] overflow-y-auto">
-            <button onclick="toggleModal('legal-modal')" class="absolute top-8 right-8 text-gray-500 hover:text-primary transition-all"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
-            <h3 class="text-3xl font-black mb-8 font-space text-primary uppercase">Mentions Légales & Conditions</h3>
-            <div class="prose prose-invert text-sm text-gray-400 space-y-6">
-                <section>
-                    <h4 class="text-white font-bold mb-2">1. Propriété</h4>
-                    <p>StudioEngine est une propriété intellectuelle de Leviathan Industrial Robotics. SIREN : [EN ATTENTE]. Siège social : [CONFIDENTIEL].</p>
-                </section>
-                <section>
-                    <h4 class="text-white font-bold mb-2">2. Hébergement</h4>
-                    <p>Site hébergé par GitHub Inc. et déployé via Railway. Automation Cloud as standard.</p>
-                </section>
-                <section>
-                    <h4 class="text-white font-bold mb-2">3. Données Personnelles</h4>
-                    <p>Conformément au RGPD, vos données sont cryptées et stockées localement sur le nœud de production de l'utilisateur pour la licence Leviathan. Pour le plan SaaS, les logs sont purgés toutes les 24h.</p>
-                </section>
-                <section>
-                    <h4 class="text-white font-bold mb-2">4. Remboursement</h4>
-                    <p>Compte tenu de la nature numérique et de l'accès immédiat au code source pour la licence Leviathan, aucun remboursement n'est possible après accès au dépôt GitHub.</p>
-                </section>
+    <!-- Order Modal (Interactive Form V2.8) -->
+    <div id="orderModal" class="fixed inset-0 modal-overlay flex items-center justify-center p-6 z-[1000] hidden">
+        <div class="glass p-8 md:p-12 rounded-[3.5rem] w-full max-w-xl shadow-2xl relative border border-white/10 max-h-[90vh] overflow-y-auto">
+            <button onclick="toggleModal('orderModal')" class="absolute top-8 right-8 text-gray-500 hover:text-white text-2xl">&times;</button>
+            
+            <div id="step-info">
+                <div class="flex items-center mb-10">
+                    <div id="planIcon" class="w-16 h-16 rounded-3xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-6 shadow-2xl text-3xl">🚀</div>
+                    <div>
+                        <h2 class="text-3xl font-black uppercase tracking-tighter" id="modalPlanTitle">LEVATHAN V2</h2>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-black" id="modalPlanPrice">1499€ / UNIQUE</p>
+                    </div>
+                </div>
+
+                <form id="orderForm" class="space-y-6">
+                    <input type="hidden" id="formPlanName">
+                    <input type="hidden" id="formPlanPrice">
+                    
+                    <div class="space-y-2">
+                        <label class="text-[10px] text-zinc-500 uppercase font-black ml-4">Identité Client</label>
+                        <input type="text" id="custName" placeholder="Ilan Cohen" class="w-full bg-white/5 border border-white/10 p-5 rounded-3xl outline-none focus:border-primary transition-all font-bold" required>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-[10px] text-zinc-500 uppercase font-black ml-4">Email de déploiement</label>
+                        <input type="email" id="custEmail" placeholder="votre@mail.com" class="w-full bg-white/5 border border-white/10 p-5 rounded-3xl outline-none focus:border-primary transition-all font-bold" required>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-[10px] text-zinc-500 uppercase font-black ml-4">WhatsApp de Support</label>
+                        <input type="tel" id="custPhone" placeholder="+33 ..." class="w-full bg-white/5 border border-white/10 p-5 rounded-3xl outline-none focus:border-primary transition-all font-bold">
+                    </div>
+
+                    <button type="submit" class="w-full py-6 bg-white text-black font-black rounded-3xl hover:bg-primary hover:text-white transition-all shadow-2xl uppercase tracking-widest text-sm">
+                        Étape Suivante : Règlement
+                    </button>
+                </form>
             </div>
-            <div class="mt-10 pt-8 border-t border-white/5 flex justify-center">
-                <button onclick="toggleModal('legal-modal')" class="px-8 py-3 bg-white text-black font-black rounded-xl">J'AI COMPRIS</button>
+
+            <div id="step-payment" class="hidden text-center">
+                <h2 class="text-3xl font-black uppercase tracking-tighter mb-4">Paiement Sécurisé</h2>
+                <p class="text-gray-500 text-xs mb-12 uppercase tracking-widest">Total à régler : <span id="paymentDisplayPrice" class="text-white font-black text-xl ml-2">0€</span></p>
+                
+                <div class="space-y-8">
+                    <div id="paypal-button-container" class="min-h-[150px]"></div>
+                    
+                    <div class="flex items-center justify-center space-x-4 opacity-30 my-4">
+                        <div class="w-20 h-px bg-white"></div>
+                        <span class="text-[10px] font-black uppercase">OU CARTE BLANCHE</span>
+                        <div class="w-20 h-px bg-white"></div>
+                    </div>
+
+                    <button onclick="payWithStripe()" class="w-full py-6 glass border border-white/10 rounded-3xl font-black text-sm uppercase tracking-widest hover:bg-primary hover:text-black transition-all flex items-center justify-center group">
+                        <svg class="w-6 h-6 mr-4 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                        Terminal Carte Bancaire
+                    </button>
+                </div>
+                
+                <button onclick="backToInfo()" class="mt-12 text-[10px] text-zinc-500 uppercase hover:text-white transition-all underline underline-offset-8">Modifier mes coordonnées</button>
             </div>
+            
+            <p class="text-[8px] text-zinc-700 text-center mt-12 uppercase tracking-[0.4em] font-black">Leviathan Encryption Protocol Active</p>
         </div>
     </div>
 
     <script>
         // GLOBAL CONFIG (Imperial Parameters)
-        const GOOGLE_CLIENT_ID = "562740318749-i83rj55sbh827thj2e13e2ctqpsfd6jn.apps.googleusercontent.com"; // ACTIVÉ 🔐
+        const API_BASE = "https://web-production-87108.up.railway.app";
+        const GOOGLE_CLIENT_ID = "562740318749-i83rj55sbh827thj2e13e2ctqpsfd6jn.apps.googleusercontent.com";
         const REDIRECT_URI = "https://web-production-87108.up.railway.app/api/auth/google/callback";
         const OBS_PLATFORM = "aHR0cHM6Ly93ZWItcHJvZHVjdGlvbi04NzEwOC51cC5yYWlsd2F5LmFwcC8=";
         // REAL GOOGLE AUTH (Empire Mode - Direct Redirect)
@@ -426,6 +468,54 @@
         // MASKED URLS (Railway Fallback)
         function accessPlatform() {
             toggleModal('login-modal');
+        }
+
+        // --- INDUSTRIAL PAYMENT FLOW (V2.8) ---
+        function openOrderModal(plan, amount) {
+            document.getElementById('modalPlanTitle').innerText = plan.toUpperCase();
+            document.getElementById('modalPlanPrice').innerText = `${amount}€ / ${plan.includes('Elite') ? 'MOIS' : 'UNIQUE'}`;
+            document.getElementById('formPlanName').value = plan;
+            document.getElementById('formPlanPrice').value = amount;
+            
+            toggleModal('orderModal');
+            document.getElementById('step-info').classList.remove('hidden');
+            document.getElementById('step-payment').classList.add('hidden');
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('step-info').classList.add('hidden');
+            document.getElementById('step-payment').classList.remove('hidden');
+            document.getElementById('paymentDisplayPrice').innerText = document.getElementById('formPlanPrice').value + "€";
+            initPayPal();
+        });
+
+        function backToInfo() {
+            document.getElementById('step-info').classList.remove('hidden');
+            document.getElementById('step-payment').classList.add('hidden');
+        }
+
+        function initPayPal() {
+            if (document.getElementById('paypal-button-container').innerHTML !== "") return;
+            paypal.Buttons({
+                createOrder: (data, actions) => actions.order.create({ purchase_units: [{ amount: { value: document.getElementById('formPlanPrice').value } }] }),
+                onApprove: (data, actions) => actions.order.capture().then(() => finalizeOrder("PayPal"))
+            }).render('#paypal-button-container');
+        }
+
+        async function payWithStripe() {
+            const name = document.getElementById('custName').value;
+            const email = document.getElementById('custEmail').value;
+            const amount = document.getElementById('formPlanPrice').value;
+            window.location.href = `${API_BASE}/api/iptv/stripe/checkout?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&amount=${amount}&method=MainSite`;
+        }
+
+        function finalizeOrder(method) {
+            const name = document.getElementById('custName').value;
+            const email = document.getElementById('custEmail').value;
+            const amount = document.getElementById('formPlanPrice').value;
+            // On utilise le moteur IPTV mais avec un flag "MainSite" pour la diff
+            window.location.href = `${API_BASE}/iptv/payment-success?name=${encodeURIComponent(name)}&amount=${amount}&email=${encodeURIComponent(email)}&method=${method}&origin=MainStudio`;
         }
 
         // AUTO-OPEN LOGIN MODAL
