@@ -45,7 +45,7 @@
         }
     </script>
     <style>
-        body { background-color: #050505; color: #ffffff; font-family: 'Outfit', sans-serif; overflow-x: hidden; cursor: none; }
+        body { background-color: #050505; color: #ffffff; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
         .neon-text { text-shadow: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.2); }
         .gradient-bg { background: radial-gradient(circle at 50% -20%, #1a0033 0%, #050505 70%); }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
@@ -67,10 +67,14 @@
         }
 
         /* Magnetic Button Base */
-        .magnetic-btn { display: inline-block; cursor: none; transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); }
+        .magnetic-btn { display: inline-block; transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); z-index: 10; }
 
         /* Modal Blur */
         .modal-overlay { background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); }
+        
+        @media (min-width: 769px) {
+            body { cursor: none; }
+        }
         
         @media (max-width: 768px) {
             body { cursor: auto; }
@@ -363,16 +367,21 @@
             window.location.href = atob(OBS_PLATFORM);
         }
 
-        // AURA CURSOR Logic
+        // AURA CURSOR Logic (Robust)
         const aura = document.getElementById('aura');
         const dot = document.getElementById('dot');
         
-        document.addEventListener('mousemove', (e) => {
-            aura.style.left = e.clientX + 'px';
-            aura.style.top = e.clientY + 'px';
-            dot.style.left = e.clientX + 'px';
-            dot.style.top = e.clientY + 'px';
-        });
+        if (window.innerWidth > 768) {
+            document.body.style.cursor = 'none';
+            document.addEventListener('mousemove', (e) => {
+                aura.style.opacity = "1";
+                dot.style.opacity = "1";
+                aura.style.left = e.clientX + 'px';
+                aura.style.top = e.clientY + 'px';
+                dot.style.left = e.clientX + 'px';
+                dot.style.top = e.clientY + 'px';
+            });
+        }
 
         // MAGNETIC BUTTONS Logic (Optimized for Clicks)
         const magneticBtns = document.querySelectorAll('.magnetic-btn');
