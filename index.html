@@ -11,53 +11,32 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://blackkillers.github.io/studio-engine/">
+    <meta property="og:url" content="https://studio-engine.js.org/">
     <meta property="og:title" content="StudioEngine | L'Empire Automatisé V65.0">
     <meta property="og:description" content="Forgez du contenu de classe mondiale 24h/24. Une usine IA autonome trilingue conçue pour dominer les réseaux sociaux. Code source complet inclus.">
     <meta property="og:image" content="https://img.icons8.com/nolan/256/robot-2.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://blackkillers.github.io/studio-engine/">
+    <meta property="twitter:url" content="https://studio-engine.js.org/">
     <meta property="twitter:title" content="StudioEngine | L'Empire Automatisé V65.0">
     <meta property="twitter:description" content="Forgez du contenu de classe mondiale 24h/24. Une usine IA autonome trilingue conçue pour dominer les réseaux sociaux. Code source complet inclus.">
     <meta property="twitter:image" content="https://img.icons8.com/nolan/256/robot-2.png">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://blackkillers.github.io/studio-engine/">
+    <link rel="canonical" href="https://studio-engine.js.org/">
     <link rel="icon" type="image/png" href="https://img.icons8.com/nolan/64/robot-2.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "StudioEngine V65.0 Gold",
-      "operatingSystem": "Windows 10/11, macOS M1/M2/M3, Linux Debian/Ubuntu",
-      "applicationCategory": "MultimediaApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "1499.00",
-        "priceCurrency": "EUR"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.95",
-        "ratingCount": "184"
-      }
-    }
-    </script>
-    
     <!-- Stripe & PayPal SDKs -->
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://www.paypal.com/sdk/js?client-id=AY8_H_vRQbhznTLNBbzeOLYMwkVS1aA16PCtk7ydE7avaGVylzvprh5fpT4KohuF63qK-BXBMnCJ0Gtg&currency=EUR&disable-funding=credit,card"></script>
 
-    <!-- Tailwind Play CDN for highly rich aesthetic layouts -->
+    <!-- Tailwind Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -67,26 +46,29 @@
                     colors: {
                         'primary': '#00f2ff',
                         'secondary': '#7000ff',
-                        'dark-bg': '#050505',
-                        'dark-card': '#0d0d0d',
+                        'accent': '#ff0055',
+                        'dark-bg': '#030303',
+                        'dark-card': '#07070a',
                     },
                     fontFamily: {
-                        'outfit': ['Outfit', 'sans-serif'],
+                        'jakarta': ['Plus Jakarta Sans', 'sans-serif'],
                         'space': ['Space Grotesk', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
                     },
                     animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glow': 'glow 3s ease-in-out infinite alternate',
+                        'float': 'float 5s ease-in-out infinite',
+                        'spin-slow': 'spin 12s linear infinite',
                     },
                     keyframes: {
                         glow: {
-                            '0%': { boxShadow: '0 0 5px rgba(0, 242, 255, 0.2)' },
-                            '100%': { boxShadow: '0 0 20px rgba(0, 242, 255, 0.6)' },
+                            '0%': { boxShadow: '0 0 10px rgba(0, 242, 255, 0.1)', borderColor: 'rgba(255, 255, 255, 0.05)' },
+                            '100%': { boxShadow: '0 0 30px rgba(0, 242, 255, 0.4)', borderColor: '#00f2ff' },
                         },
                         float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-15px)' },
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-12px) rotate(1deg)' },
                         }
                     }
                 }
@@ -94,208 +76,300 @@
         }
     </script>
     <style>
-        body { background-color: #050505; color: #ffffff; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
-        .neon-text { text-shadow: 0 0 10px rgba(0, 242, 255, 0.4), 0 0 20px rgba(0, 242, 255, 0.1); }
-        .gradient-bg { background: radial-gradient(circle at 50% -20%, #1a0033 0%, #050505 70%); }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .premium-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .premium-card:hover { transform: translateY(-8px) scale(1.01); border-color: #00f2ff; box-shadow: 0 20px 40px -15px rgba(0, 242, 255, 0.2); }
+        body { background-color: #030303; color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        .neon-text { text-shadow: 0 0 10px rgba(0, 242, 255, 0.3), 0 0 20px rgba(0, 242, 255, 0.1); }
+        .gradient-bg { background: radial-gradient(circle at 50% -20%, #17002b 0%, #030303 75%); }
+        .glass { background: rgba(255, 255, 255, 0.01); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.04); }
+        .premium-card { transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .premium-card:hover { transform: translateY(-8px) scale(1.015); border-color: #00f2ff; box-shadow: 0 25px 50px -15px rgba(0, 242, 255, 0.25); }
         
         #aura {
-            position: fixed; top: 0; left: 0; width: 350px; height: 350px;
-            background: radial-gradient(circle, rgba(0, 242, 255, 0.1) 0%, transparent 70%);
+            position: fixed; top: 0; left: 0; width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.08) 0%, transparent 70%);
             border-radius: 50%; pointer-events: none; z-index: 9999;
-            transform: translate(-50%, -50%); transition: transform 0.08s ease-out;
+            transform: translate(-50%, -50%); transition: transform 0.05s ease-out;
         }
         #dot {
-            position: fixed; top: 0; left: 0; width: 6px; height: 6px;
+            position: fixed; top: 0; left: 0; width: 5px; height: 5px;
             background: #00f2ff; border-radius: 50%; pointer-events: none; z-index: 10000;
-            transform: translate(-50%, -50%); transition: transform 0.04s ease-out;
-            box-shadow: 0 0 10px #00f2ff;
+            transform: translate(-50%, -50%); transition: transform 0.02s ease-out;
+            box-shadow: 0 0 8px #00f2ff;
         }
 
-        .magnetic-btn { display: inline-block; transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); }
-        .modal-overlay { background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); }
+        .magnetic-btn { display: inline-block; transition: transform 0.25s cubic-bezier(0.25, 1, 0.25, 1); }
+        .modal-overlay { background: rgba(0,0,0,0.9); backdrop-filter: blur(12px); }
         
+        /* Grid overlay background */
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+        }
+
         @media (min-width: 769px) { body { cursor: none; } }
         @media (max-width: 768px) { body { cursor: auto; } #aura, #dot { display: none; } }
     </style>
 </head>
-<body class="selection:bg-primary/30">
+<body class="selection:bg-primary/30 grid-bg">
 
     <div id="aura"></div>
     <div id="dot"></div>
 
     <!-- Header / Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass py-4 px-6 md:px-12 flex justify-between items-center bg-black/40">
+    <nav class="fixed top-0 w-full z-50 glass py-4 px-6 md:px-12 flex justify-between items-center bg-black/60">
         <div class="flex items-center space-x-2">
             <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center font-bold text-black shadow-lg">S</div>
             <span class="text-xl font-extrabold tracking-tighter neon-text font-space">StudioEngine</span>
         </div>
-        <div class="hidden md:flex space-x-8 text-xs font-semibold tracking-wide uppercase opacity-70">
+        <div class="hidden md:flex space-x-8 text-xs font-bold tracking-wide uppercase opacity-75">
             <a href="#features" class="hover:text-primary transition-all">Fonctionnalités</a>
-            <a href="#fallback" class="hover:text-primary transition-all">Résilience</a>
-            <a href="#faq" class="hover:text-primary transition-all">F.A.Q</a>
+            <a href="#playground" class="hover:text-primary transition-all">Démonstration</a>
+            <a href="#dashboard" class="hover:text-primary transition-all">Cockpit Live</a>
+            <a href="#faq" class="hover:text-primary transition-all">FAQ</a>
             <a href="#pricing" class="hover:text-primary transition-all">Acquérir la Forge</a>
         </div>
-        <button onclick="toggleModal('login-modal')" class="magnetic-btn px-5 py-2 bg-primary text-black font-black rounded-full text-[10px] hover:scale-105 transition-transform shadow-[0_0_15px_rgba(0,242,255,0.3)]">ACCÈS CLIENT</button>
+        <button onclick="toggleModal('login-modal')" class="magnetic-btn px-6 py-2.5 bg-gradient-to-r from-primary to-secondary text-black font-black rounded-full text-[10px] hover:scale-105 transition-transform shadow-[0_0_15px_rgba(0,242,255,0.4)] uppercase">ACCÈS COCKPIT</button>
     </nav>
 
     <!-- Hero Section -->
     <header class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 gradient-bg">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-secondary/10 blur-[130px] rounded-full -z-10 animate-pulse-slow"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-secondary/15 blur-[150px] rounded-full -z-10 animate-pulse-slow"></div>
         
-        <div class="inline-block px-4 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-[9px] font-black tracking-[0.25em] uppercase mb-6">
-            AUTONOMOUS VIDEO FACTORY V65.0 GOLD
+        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-[9px] font-black tracking-[0.25em] uppercase mb-8 shadow-[0_0_15px_rgba(0,242,255,0.1)]">
+            <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+            <span>V65.0 GOLD MULTI-PLATFORM RELEASE</span>
         </div>
         
-        <h1 class="text-5xl md:text-8xl font-black tracking-tighter mb-8 font-space leading-[0.95]">
-            POSSÉDEZ VOTRE <br>
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-secondary animate-glow">EMPIRE DE VIDEOS IA</span>
+        <h1 class="text-5xl md:text-8xl font-black tracking-tighter mb-8 font-space leading-[0.95] max-w-5xl">
+            FORGEZ VOTRE EMPIRE DE <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-secondary animate-glow">CONTENU IA AUTONOME</span>
         </h1>
         
-        <p class="text-base md:text-xl text-gray-400 max-w-2xl mb-12 font-light leading-relaxed">
-            Forgez du contenu haut de gamme 24h/24 sur YouTube, TikTok & Reels. <br> 
-            <span class="text-white/80 font-medium">Code source souverain. Déploiement multiplateforme (PC, Mac, VPS).</span>
+        <p class="text-base md:text-xl text-gray-400 max-w-3xl mb-14 font-light leading-relaxed">
+            Une usine de production vidéo souveraine 24h/24. <br> 
+            <span class="text-white/80 font-medium">Zéro montage, zéro friction. Multi-plateforme : Windows (CUDA), Mac (MPS Metal) & VPS (Headless).</span>
         </p>
         
         <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-            <a href="#pricing" class="magnetic-btn px-10 py-5 bg-gradient-to-r from-primary to-secondary text-black font-black rounded-xl text-lg hover:shadow-[0_0_30px_rgba(0,242,255,0.4)] transition-all">
-                OBTENIR LE CODE SOURCE
+            <a href="#pricing" class="magnetic-btn px-10 py-5 bg-white text-black font-black rounded-2xl text-lg hover:bg-primary hover:text-white transition-all shadow-[0_0_35px_rgba(255,255,255,0.15)] uppercase">
+                Acquérir le Code Source
             </a>
-            <a href="https://github.com/blackkillers/studioilan" target="_blank" class="magnetic-btn px-10 py-5 glass rounded-xl text-lg font-bold hover:bg-white/5 transition-all flex items-center justify-center border-white/10">
-                EXPLORER LES BRANCHES
+            <a href="#playground" class="magnetic-btn px-10 py-5 glass rounded-2xl text-lg font-bold hover:bg-white/5 transition-all flex items-center justify-center border-white/10 uppercase">
+                Démonstrateur Interactif
             </a>
         </div>
         
-        <div class="mt-20 opacity-20 animate-float">
+        <div class="mt-20 opacity-30 animate-float">
             <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
         </div>
     </header>
 
-    <!-- Interactive Features Section -->
-    <section id="features" class="py-24 px-6 md:px-12 bg-dark-bg border-t border-white/5">
+    <!-- Key Tech Features Section -->
+    <section id="features" class="py-24 px-6 md:px-12 bg-dark-bg border-t border-white/5 relative">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-5xl font-black mb-4 font-space">Souveraineté & Précision</h2>
-                <p class="text-gray-500 font-semibold tracking-widest uppercase text-xs">Architecturé pour dominer la création de Shorts</p>
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-6xl font-black mb-4 font-space">Architecture Souveraine</h2>
+                <p class="text-gray-500 font-semibold tracking-widest uppercase text-xs">Pensée pour la résilience totale et le rendement extrême</p>
                 <div class="w-24 h-1 bg-gradient-to-r from-primary to-transparent mx-auto mt-4"></div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="premium-card glass p-8 rounded-3xl bg-gradient-to-br from-white/2 to-transparent border-white/5">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                <div class="premium-card glass p-10 rounded-[2.5rem] bg-gradient-to-br from-white/2 to-transparent border-white/5 relative overflow-hidden group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 font-space text-white">Symmetric Triple-OS</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Trois branches d'exécution distinctes et synchronisées : <strong>Windows</strong> (CUDA RTX), <strong>macOS</strong> (Apple Silicon Metal) et <strong>Debian VPS</strong> (Production 24/7 Headless).</p>
+                    <h3 class="text-2xl font-bold mb-4 font-space text-white">Symmetric Triple-OS</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Un code unique, trois branches de compilation parfaitement optimisées :</p>
+                    <div class="space-y-2 text-xs text-zinc-500">
+                        <p class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span> Windows (RTX CUDA Auto-detect)</p>
+                        <p class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span> macOS ARM64 Metal GPU Acceleration (MPS)</p>
+                        <p class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary mr-2"></span> Linux Debian (Headless & Venv Isolation)</p>
+                    </div>
                 </div>
+                
                 <!-- Feature 2 -->
-                <div class="premium-card glass p-8 rounded-3xl bg-gradient-to-br from-white/2 to-transparent border-white/5">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <div class="premium-card glass p-10 rounded-[2.5rem] bg-gradient-to-br from-white/2 to-transparent border-white/5 relative overflow-hidden group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 font-space text-white">Triple Fallback LLM</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Zéro blocage d'API. Moteur hybride alternant intelligemment entre <strong>OpenRouter</strong>, le <strong>SDK Direct Google Gemini</strong>, <strong>Groq Cloud</strong>, et <strong>Ollama Local</strong>.</p>
+                    <h3 class="text-2xl font-bold mb-4 font-space text-white">Triple-Level Fallback</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Moteur de script intelligent anti-freeze :</p>
+                    <div class="space-y-2 text-xs text-zinc-500">
+                        <p class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-secondary mr-2"></span> OpenRouter (Claude 3 / Gemini 2.0)</p>
+                        <p class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-secondary mr-2"></span> Google GenAI SDK Direct (Fallback clé gratuite)</p>
+                        <p class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-secondary mr-2"></span> Groq Cloud (Llama 3.3 70B à 200 tokens/sec)</p>
+                    </div>
                 </div>
+
                 <!-- Feature 3 -->
-                <div class="premium-card glass p-8 rounded-3xl bg-gradient-to-br from-white/2 to-transparent border-white/5">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2"></path></svg>
+                <div class="premium-card glass p-10 rounded-[2.5rem] bg-gradient-to-br from-white/2 to-transparent border-white/5 relative overflow-hidden group">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 font-space text-white">Veille & Extraction Oracle</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Scraping chirurgical en temps réel des flux d'actualité mondiaux (WordPress RSS, France24, BBC) pour injecter des contextes factuels sans hallucination d'IA.</p>
+                    <h3 class="text-2xl font-bold mb-4 font-space text-white">Diagnostics Autonomes</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Scripts d'audit automatique en 5 secondes :</p>
+                    <div class="space-y-2 text-xs text-zinc-500">
+                        <p class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-accent mr-2"></span> HEALTH_CHECK.py (Windows Hardware audit)</p>
+                        <p class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-accent mr-2"></span> HEALTH_CHECK_MAC.py (M1/M2/M3 Metal checks)</p>
+                        <p class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-accent mr-2"></span> HEALTH_CHECK_VPS.py (Pillow Headless & Redis monitor)</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Architecture & Resilience Panel -->
-    <section id="fallback" class="py-24 px-6 md:px-12 glass relative border-t border-white/5">
-        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-            <div class="lg:w-1/2">
-                <div class="inline-block px-3 py-1 rounded-full border border-secondary/30 bg-secondary/10 text-secondary text-[8px] font-black tracking-[0.2em] uppercase mb-4">
-                    TOLÉRANCE AUX PANNES ABSOLUE
-                </div>
-                <h2 class="text-3xl md:text-5xl font-black mb-6 font-space">La Technologie Hybride de Secours</h2>
-                <p class="text-gray-300 text-base mb-8 leading-relaxed">
-                    Si vos crédits OpenRouter s'épuisent ou qu'un fournisseur d'API subit un temps d'arrêt, StudioEngine bascule automatiquement en quelques microsecondes vers des backends alternatifs entièrement gratuits pour garantir la continuité de votre production.
-                </p>
-                <div class="space-y-4">
-                    <div class="flex items-start">
-                        <span class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-4 text-xs font-bold mt-1">1</span>
-                        <p class="text-gray-400 text-sm"><strong class="text-white">OpenRouter stable (Principal)</strong> : Exécute Claude 3 Haiku ou Gemini 2.0 pour une narration percutante.</p>
-                    </div>
-                    <div class="flex items-start">
-                        <span class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-4 text-xs font-bold mt-1">2</span>
-                        <p class="text-gray-400 text-sm"><strong class="text-white">Direct Gemini SDK Fallback</strong> : Bascule nativement sur votre clé Google API gratuite en cas de défaut de facturation.</p>
-                    </div>
-                    <div class="flex items-start">
-                        <span class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-4 text-xs font-bold mt-1">3</span>
-                        <p class="text-gray-400 text-sm"><strong class="text-white">Groq Cloud (Llama 3.3 70B)</strong> : L'alternative open-source ultra-rapide à 200 tokens/sec.</p>
-                    </div>
-                </div>
+    <!-- Interactive Niches Playground Section -->
+    <section id="playground" class="py-24 px-6 md:px-12 glass relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 font-space">Terrain de Jeu Interactif</h2>
+                <p class="text-gray-500">Simulez la puissance de la forge sur différentes niches</p>
             </div>
-            <div class="lg:w-1/2 bg-zinc-950/80 p-8 rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden">
-                <div class="flex items-center space-x-2 mb-6 border-b border-white/5 pb-4">
-                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    <span class="text-[10px] text-zinc-500 font-mono pl-4">engine/agents/base_agent.py</span>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-6xl mx-auto items-stretch">
+                <!-- Niche Selector (4 cols) -->
+                <div class="lg:col-span-4 flex flex-col justify-between space-y-4">
+                    <button onclick="switchNiche('news')" class="niche-tab-btn active text-left p-6 glass rounded-2xl border-primary/40 bg-primary/5 transition-all flex items-center justify-between group">
+                        <div>
+                            <h4 class="font-bold text-lg text-white font-space">Actualités Virales</h4>
+                            <p class="text-xs text-zinc-400">Scraping de flux factuels Oracle RSS</p>
+                        </div>
+                        <span class="text-primary group-hover:translate-x-2 transition-transform">&rarr;</span>
+                    </button>
+                    
+                    <button onclick="switchNiche('motivation')" class="niche-tab-btn text-left p-6 glass rounded-2xl border-white/5 transition-all flex items-center justify-between group">
+                        <div>
+                            <h4 class="font-bold text-lg text-white font-space">Motivation & Mental</h4>
+                            <p class="text-xs text-zinc-400">Philosophie stoïcienne et viralité</p>
+                        </div>
+                        <span class="text-zinc-500 group-hover:translate-x-2 transition-transform">&rarr;</span>
+                    </button>
+                    
+                    <button onclick="switchNiche('tech')" class="niche-tab-btn text-left p-6 glass rounded-2xl border-white/5 transition-all flex items-center justify-between group">
+                        <div>
+                            <h4 class="font-bold text-lg text-white font-space">Futur & Tech Trends</h4>
+                            <p class="text-xs text-zinc-400">Récits sur l'IA et l'astronautique</p>
+                        </div>
+                        <span class="text-zinc-500 group-hover:translate-x-2 transition-transform">&rarr;</span>
+                    </button>
                 </div>
-                <pre class="text-xs text-zinc-400 font-mono overflow-x-auto leading-relaxed">
-<code># Dynamic Fallback Core Implementation
-try:
-    response = await call_openrouter(model_a)
-except Exception as e:
-    logger.warning("OpenRouter failed. Activating Gemini SDK...")
-    try:
-        response = await call_direct_gemini_sdk()
-    except Exception as gem_err:
-        logger.warning("Gemini failed. Activating Groq Llama...")
-        response = await call_groq_llama_3_3()</code>
-                </pre>
+                
+                <!-- Niche Display & Output (8 cols) -->
+                <div class="lg:col-span-8 bg-zinc-950/90 border border-white/5 p-8 md:p-10 rounded-[2.5rem] shadow-2xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-48 h-48 bg-primary/5 blur-[50px] rounded-full"></div>
+                    
+                    <!-- Code/Output Sandbox -->
+                    <div>
+                        <div class="flex items-center justify-between border-b border-white/5 pb-4 mb-6">
+                            <span class="text-[10px] text-zinc-400 font-mono" id="sandbox-filename">engine/agents/oracle_news.py</span>
+                            <span class="text-[9px] px-2 py-0.5 rounded bg-green-500/10 text-green-400 font-mono">STATUS: ONLINE</span>
+                        </div>
+                        
+                        <div id="sandbox-content" class="font-mono text-xs leading-relaxed space-y-4">
+                            <!-- Injected dynamically by JS -->
+                            <p class="text-zinc-500">// Oracle RSS Data Feed Hooked</p>
+                            <p class="text-primary">>>> [ORACLE] Subject identified: 'La jeunesse danse sous les bombes à Kiev'</p>
+                            <p class="text-white">>>> [STORYTELLER] Generating 5-scene viral narrative in French...</p>
+                            <div class="p-4 bg-white/2 rounded-xl border border-white/5 text-[11px] text-zinc-300">
+                                <strong>Scene 1:</strong> "Alors que les sirènes retentissent... dans ce sous-sol secret de Kiev, la musique couvre le grondement des missiles. Ils ne dansent pas pour oublier. Ils dansent pour défier."
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-4 border-t border-white/5 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs text-zinc-500 gap-4">
+                        <span id="sandbox-voice">Voice Profile: <strong>fr-FR-HenriNeural</strong></span>
+                        <span id="sandbox-media">Sourced Assets: <strong>5 HD Scene-clips (Pexels API)</strong></span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- F.A.Q Section -->
-    <section id="faq" class="py-24 px-6 md:px-12 bg-dark-bg border-t border-white/5">
+    <!-- Cockpit Live Stats Dashboard Section -->
+    <section id="dashboard" class="py-24 px-6 md:px-12 bg-dark-bg border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 font-space">Cockpit Autonome Live</h2>
+                <p class="text-gray-500">Aperçu en temps réel de la forge perpétuelle en cours de production</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
+                <div class="glass p-6 rounded-2xl border-white/5 text-center">
+                    <span class="text-zinc-500 text-[10px] font-black uppercase tracking-widest block mb-2">Vidéos Forgées</span>
+                    <span class="text-4xl font-black font-space text-white tracking-tighter" id="stat-videos">1,824</span>
+                </div>
+                <div class="glass p-6 rounded-2xl border-white/5 text-center">
+                    <span class="text-zinc-500 text-[10px] font-black uppercase tracking-widest block mb-2">Vues Cumulées</span>
+                    <span class="text-4xl font-black font-space text-primary tracking-tighter" id="stat-views">3.4M</span>
+                </div>
+                <div class="glass p-6 rounded-2xl border-white/5 text-center">
+                    <span class="text-zinc-500 text-[10px] font-black uppercase tracking-widest block mb-2">Revenus Affiliation</span>
+                    <span class="text-4xl font-black font-space text-white tracking-tighter" id="stat-rev">4,281€</span>
+                </div>
+                <div class="glass p-6 rounded-2xl border-white/5 text-center">
+                    <span class="text-zinc-500 text-[10px] font-black uppercase tracking-widest block mb-2">GPU Load (NVENC)</span>
+                    <span class="text-4xl font-black font-space text-secondary tracking-tighter" id="stat-gpu">42%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- F.A.Q Accordion Section -->
+    <section id="faq" class="py-24 px-6 md:px-12 glass border-t border-white/5">
         <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-black mb-4 font-space">F.A.Q Technique</h2>
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-black mb-4 font-space">FAQ Technique</h2>
                 <p class="text-gray-500">Toutes les réponses à vos exigences de déploiement</p>
             </div>
             
-            <div class="space-y-6">
-                <div class="glass p-6 rounded-2xl border-white/5">
-                    <h3 class="text-lg font-bold mb-2 font-space text-white">Puis-je exécuter StudioEngine sur mon Mac M1/M2/M3 ?</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Absolument ! La branche <code>mac-dev</code> intègre un diagnostic dédié qui configure automatiquement le support GPU MPS (Metal) d'Apple Silicon pour exécuter Whisper et PyTorch avec accélération matérielle.</p>
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="glass rounded-2xl border-white/5 overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full text-left p-6 font-bold font-space flex justify-between items-center text-white focus:outline-none">
+                        <span>Puis-je exécuter StudioEngine sur mon Mac M1/M2/M3 ?</span>
+                        <span id="faq-icon-1" class="text-primary text-xl">&plus;</span>
+                    </button>
+                    <div id="faq-content-1" class="hidden px-6 pb-6 text-sm text-zinc-400 leading-relaxed border-t border-white/5 pt-4">
+                        Absolument ! La branche <code>mac-dev</code> intègre un diagnostic dédié (HEALTH_CHECK_MAC.py) qui configure automatiquement le support GPU MPS (Metal) d'Apple Silicon pour exécuter Whisper et PyTorch avec accélération matérielle native arm64.
+                    </div>
                 </div>
-                <div class="glass p-6 rounded-2xl border-white/5">
-                    <h3 class="text-lg font-bold mb-2 font-space text-white">Quelles sont les dépendances système requises pour le VPS Debian ?</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Notre outil de déploiement s'assure d'installer et configurer automatiquement l'environnement virtuel (venv). Les dépendances requises comme Pillow (en mode headless sans écran) et FFmpeg natif Linux sont testées et sécurisées par le script <code>tools/HEALTH_CHECK_VPS.py</code>.</p>
+                
+                <!-- FAQ Item 2 -->
+                <div class="glass rounded-2xl border-white/5 overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full text-left p-6 font-bold font-space flex justify-between items-center text-white focus:outline-none">
+                        <span>Quelles sont les dépendances système requises pour le VPS Debian ?</span>
+                        <span id="faq-icon-2" class="text-primary text-xl">&plus;</span>
+                    </button>
+                    <div id="faq-content-2" class="hidden px-6 pb-6 text-sm text-zinc-400 leading-relaxed border-t border-white/5 pt-4">
+                        Notre outil de déploiement s'assure d'installer et de configurer automatiquement l'environnement virtuel (venv). Les dépendances comme Pillow (en mode headless sans écran) et FFmpeg natif Linux sont validées et sécurisées par le script <code>tools/HEALTH_CHECK_VPS.py</code>.
+                    </div>
                 </div>
-                <div class="glass p-6 rounded-2xl border-white/5">
-                    <h3 class="text-lg font-bold mb-2 font-space text-white">Comment fonctionne le transfert rapide de 7.89 Mo ?</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Nous avons exclu toutes les données volumineuses de cache et médias (5 Go+) pour ne conserver que la logique pure de l'algorithme. L'archive s'envoie par SFTP en moins de 3 secondes, et les dépendances lourdes se configurent de manière asynchrone directement sur le serveur.</p>
+
+                <!-- FAQ Item 3 -->
+                <div class="glass rounded-2xl border-white/5 overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full text-left p-6 font-bold font-space flex justify-between items-center text-white focus:outline-none">
+                        <span>Comment fonctionne le pack de déploiement ultra-léger de 7.89 Mo ?</span>
+                        <span id="faq-icon-3" class="text-primary text-xl">&plus;</span>
+                    </button>
+                    <div id="faq-content-3" class="hidden px-6 pb-6 text-sm text-zinc-400 leading-relaxed border-t border-white/5 pt-4">
+                        Nous avons exclu toutes les données volumineuses de cache et les médias (5 Go+) pour ne conserver que la logique pure de l'algorithme. L'archive s'envoie par SFTP en moins de 3 secondes, et les dépendances se configurent de manière asynchrone directement sur le serveur via pip.
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-24 px-6 md:px-12 glass relative border-t border-white/5">
+    <section id="pricing" class="py-24 px-6 md:px-12 bg-dark-bg border-t border-white/5 relative">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-5xl font-black mb-4 font-space">L'Investissement Souverain</h2>
-                <p class="text-gray-400">Prenez le contrôle total de vos flux de diffusion</p>
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-6xl font-black mb-4 font-space">L'Acquisition Souveraine</h2>
+                <p class="text-gray-400">Prenez le contrôle total de vos flux de diffusion à vie</p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
                 <!-- Creator Plan -->
-                <div class="premium-card bg-zinc-950/80 border border-white/5 p-10 rounded-[2.5rem] relative shadow-2xl">
+                <div class="premium-card bg-zinc-950/60 border border-white/5 p-12 rounded-[2.5rem] relative shadow-2xl">
                     <div class="text-[9px] font-black tracking-[0.25em] text-primary uppercase mb-8">HÉBERGEMENT MANAGÉ</div>
                     <h3 class="text-3xl font-bold mb-2 font-space">Abonnement SaaS Créateur</h3>
                     <p class="text-5xl font-black mb-8 font-space">149€ <span class="text-base font-light text-gray-500">/ mois</span></p>
@@ -308,7 +382,7 @@ except Exception as e:
                 </div>
                 
                 <!-- Leviathan Source Plan -->
-                <div class="premium-card bg-white text-black p-10 rounded-[2.5rem] relative ring-8 ring-primary/20 shadow-2xl overflow-hidden">
+                <div class="premium-card bg-white text-black p-12 rounded-[2.5rem] relative ring-8 ring-primary/20 shadow-2xl overflow-hidden">
                     <div class="absolute top-0 right-0 bg-secondary text-white text-[9px] font-black px-6 py-2 rotate-45 translate-x-8 translate-y-4 tracking-widest">PRO SOURCE</div>
                     <div class="text-[9px] font-black tracking-[0.25em] text-secondary uppercase mb-8">SOUVERAINETÉ SANS LIMITE</div>
                     <h3 class="text-3xl font-bold mb-2 font-space">Licence Code Source</h3>
@@ -377,7 +451,7 @@ except Exception as e:
         </div>
     </div>
 
-    <!-- Order Modal (Interactive Form V2.8) -->
+    <!-- Order Modal -->
     <div id="orderModal" class="fixed inset-0 modal-overlay flex items-center justify-center p-6 z-[1000] hidden">
         <div class="glass p-6 md:p-10 rounded-[3rem] w-full max-w-lg shadow-2xl relative border border-white/10 max-h-[90vh] overflow-y-auto">
             <button onclick="toggleModal('orderModal')" class="absolute top-6 right-6 text-gray-500 hover:text-white text-xl">&times;</button>
@@ -437,8 +511,6 @@ except Exception as e:
                 
                 <button onclick="backToInfo()" class="mt-8 text-[9px] text-zinc-500 uppercase hover:text-white transition-all underline underline-offset-4">Modifier mes coordonnées</button>
             </div>
-            
-            <p class="text-[7px] text-zinc-700 text-center mt-8 uppercase tracking-[0.3em] font-black">Leviathan Encryption Protocol Active</p>
         </div>
     </div>
 
@@ -552,6 +624,99 @@ except Exception as e:
             const amount = document.getElementById('formPlanPrice').value;
             window.location.href = `${API_BASE}/iptv/payment-success?name=${encodeURIComponent(name)}&amount=${amount}&email=${encodeURIComponent(email)}&method=${method}&origin=StudioEngine`;
         }
+
+        // Accordion FAQ Logic
+        function toggleFaq(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.innerHTML = "&minus;";
+            } else {
+                content.classList.add('hidden');
+                icon.innerHTML = "&plus;";
+            }
+        }
+
+        // Dynamic playground switches
+        const nichesData = {
+            news: {
+                file: "engine/agents/oracle_news.py",
+                voice: "Voice Profile: <strong>fr-FR-HenriNeural</strong>",
+                media: "Sourced Assets: <strong>5 HD Scene-clips (Pexels API)</strong>",
+                html: `<p class="text-zinc-500">// Oracle RSS Data Feed Hooked</p>
+                       <p class="text-primary">>>> [ORACLE] Subject: 'La jeunesse danse sous les bombes a Kiev'</p>
+                       <p class="text-white">>>> [STORYTELLER] Generating 5-scene viral narrative in French...</p>
+                       <div class="p-4 bg-white/2 rounded-xl border border-white/5 text-[11px] text-zinc-300">
+                           <strong>Scene 1:</strong> "Alors que les sirenes retentissent... dans ce sous-sol secret de Kiev, la musique couvre le grondement des missiles. Ils ne dansent pas pour oublier. Ils dansent pour defier."
+                       </div>`
+            },
+            motivation: {
+                file: "engine/agents/storyteller_motivation.py",
+                voice: "Voice Profile: <strong>fr-FR-DeniseNeural</strong>",
+                media: "Sourced Assets: <strong>6 Stoic/Landscape Clips (Pixabay)</strong>",
+                html: `<p class="text-zinc-500">// Stoic Philosophy Generator Active</p>
+                       <p class="text-primary">>>> [ORACLE] Subject: 'La discipline de Marc Aurele'</p>
+                       <p class="text-white">>>> [STORYTELLER] Generating 6-scene viral narrative in French...</p>
+                       <div class="p-4 bg-white/2 rounded-xl border border-white/5 text-[11px] text-zinc-300">
+                           <strong>Scene 1:</strong> "Tu as le pouvoir sur ton esprit, pas sur les evenements exterieurs. Realise cela, et tu trouveras la force. La discipline n'est pas une prison, c'est l'ultime clef de ta liberte."
+                       </div>`
+            },
+            tech: {
+                file: "engine/agents/ensemble_storyteller.py",
+                voice: "Voice Profile: <strong>en-US-GuyNeural</strong>",
+                media: "Sourced Assets: <strong>5 AI/Futuristic Clips (Shutterstock API)</strong>",
+                html: `<p class="text-zinc-500">// Artificial Intelligence Trend Tracker</p>
+                       <p class="text-primary">>>> [ORACLE] Subject: 'Gemini 2.5 Flash Autonomous Agents'</p>
+                       <p class="text-white">>>> [STORYTELLER] Generating 5-scene viral narrative in English...</p>
+                       <div class="p-4 bg-white/2 rounded-xl border border-white/5 text-[11px] text-zinc-300">
+                           <strong>Scene 1:</strong> "The era of static assistants is over. Today, AI agents are coding, renting servers, and deploying whole ecommerce empires on their own. The future isn't coming... it's already running in background."
+                       </div>`
+            }
+        };
+
+        function switchNiche(nicheKey) {
+            // Remove active classes
+            document.querySelectorAll('.niche-tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'border-primary/40', 'bg-primary/5');
+                btn.classList.add('border-white/5');
+                btn.querySelector('span').classList.remove('text-primary');
+                btn.querySelector('span').classList.add('text-zinc-500');
+            });
+
+            // Set current active
+            const activeBtn = event.currentTarget;
+            activeBtn.classList.add('active', 'border-primary/40', 'bg-primary/5');
+            activeBtn.classList.remove('border-white/5');
+            activeBtn.querySelector('span').classList.add('text-primary');
+            activeBtn.querySelector('span').classList.remove('text-zinc-500');
+
+            // Update content
+            const data = nichesData[nicheKey];
+            document.getElementById('sandbox-filename').innerText = data.file;
+            document.getElementById('sandbox-voice').innerHTML = data.voice;
+            document.getElementById('sandbox-media').innerHTML = data.media;
+            document.getElementById('sandbox-content').innerHTML = data.html;
+        }
+
+        // Live dashboard counters increment simulation
+        setInterval(() => {
+            const v = document.getElementById('stat-videos');
+            const r = document.getElementById('stat-rev');
+            const g = document.getElementById('stat-gpu');
+            
+            // Random small changes
+            if(Math.random() > 0.4) {
+                const currentV = parseInt(v.innerText.replace(',', ''));
+                v.innerText = (currentV + 1).toLocaleString();
+            }
+            if(Math.random() > 0.7) {
+                const currentR = parseInt(r.innerText.replace('€', '').replace(',', ''));
+                r.innerText = (currentR + Math.floor(Math.random() * 5) + 1).toLocaleString() + "€";
+            }
+            
+            g.innerText = Math.floor(Math.random() * 15 + 35) + "%";
+        }, 3000);
     </script>
 </body>
 </html>
