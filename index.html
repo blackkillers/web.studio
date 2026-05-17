@@ -3,57 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudioEngine | L'Usine de Production Vidéo IA Autonome 24/7</title>
+    <title>StudioEngine | L'Usine de Vidéos IA Autonome 24/7 (Souveraine & Multiplateforme)</title>
     <meta name="description" content="StudioEngine est l'usine de forge de contenu multilingue la plus évoluée au monde. Automatisez votre production YouTube Shorts, TikTok et Reels avec une orchestration multi-agent autonome.">
-    <meta name="keywords" content="IA, Automatisation Vidéo, YouTube Shorts, TikTok, Reels, StudioEngine, Leviathan Protocol, Intelligence Artificielle, Content Factory">
+    <meta name="keywords" content="IA, Automatisation Vidéo, YouTube Shorts, TikTok, Reels, StudioEngine, Leviathan Protocol, Intelligence Artificielle, Content Factory, Code Source Python">
     <meta name="author" content="Leviathan Industrial Robotics">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://blackkillers.github.io/web.studio/">
-    <meta property="og:title" content="StudioEngine | L'Empire Automatisé">
-    <meta property="og:description" content="Forgez du contenu de classe mondiale 24h/24. Une usine IA trilingue autonome conçue pour dominer les réseaux sociaux.">
-    <meta property="og:image" content="og-image.png">
+    <meta property="og:url" content="https://blackkillers.github.io/studio-engine/">
+    <meta property="og:title" content="StudioEngine | L'Empire Automatisé V65.0">
+    <meta property="og:description" content="Forgez du contenu de classe mondiale 24h/24. Une usine IA autonome trilingue conçue pour dominer les réseaux sociaux. Code source complet inclus.">
+    <meta property="og:image" content="https://img.icons8.com/nolan/256/robot-2.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://blackkillers.github.io/web.studio/">
-    <meta property="twitter:title" content="StudioEngine | L'Empire Automatisé">
-    <meta property="twitter:description" content="Forgez du contenu de classe mondiale 24h/24. Une usine IA trilingue autonome conçue pour dominer les réseaux sociaux.">
-    <meta property="twitter:image" content="og-image.png">
+    <meta property="twitter:url" content="https://blackkillers.github.io/studio-engine/">
+    <meta property="twitter:title" content="StudioEngine | L'Empire Automatisé V65.0">
+    <meta property="twitter:description" content="Forgez du contenu de classe mondiale 24h/24. Une usine IA autonome trilingue conçue pour dominer les réseaux sociaux. Code source complet inclus.">
+    <meta property="twitter:image" content="https://img.icons8.com/nolan/256/robot-2.png">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://blackkillers.github.io/web.studio/">
-
+    <link rel="canonical" href="https://blackkillers.github.io/studio-engine/">
     <link rel="icon" type="image/png" href="https://img.icons8.com/nolan/64/robot-2.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "StudioEngine",
-      "operatingSystem": "Web, Windows, Linux",
+      "name": "StudioEngine V65.0 Gold",
+      "operatingSystem": "Windows 10/11, macOS M1/M2/M3, Linux Debian/Ubuntu",
       "applicationCategory": "MultimediaApplication",
       "offers": {
         "@type": "Offer",
-        "price": "149.00",
+        "price": "1499.00",
         "priceCurrency": "EUR"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "124"
+        "ratingValue": "4.95",
+        "ratingCount": "184"
       }
     }
     </script>
     
-    <!-- Financial Core SDKs -->
+    <!-- Stripe & PayPal SDKs -->
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://www.paypal.com/sdk/js?client-id=AY8_H_vRQbhznTLNBbzeOLYMwkVS1aA16PCtk7ydE7avaGVylzvprh5fpT4KohuF63qK-BXBMnCJ0Gtg&currency=EUR&disable-funding=credit,card"></script>
 
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- Tailwind Play CDN for highly rich aesthetic layouts -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -63,7 +68,7 @@
                         'primary': '#00f2ff',
                         'secondary': '#7000ff',
                         'dark-bg': '#050505',
-                        'dark-card': '#0a0a0a',
+                        'dark-card': '#0d0d0d',
                     },
                     fontFamily: {
                         'outfit': ['Outfit', 'sans-serif'],
@@ -81,7 +86,7 @@
                         },
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
+                            '50%': { transform: 'translateY(-15px)' },
                         }
                     }
                 }
@@ -90,40 +95,30 @@
     </script>
     <style>
         body { background-color: #050505; color: #ffffff; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
-        .neon-text { text-shadow: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.2); }
+        .neon-text { text-shadow: 0 0 10px rgba(0, 242, 255, 0.4), 0 0 20px rgba(0, 242, 255, 0.1); }
         .gradient-bg { background: radial-gradient(circle at 50% -20%, #1a0033 0%, #050505 70%); }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .premium-card { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .premium-card:hover { transform: translateY(-12px) scale(1.02); border-color: #00f2ff; box-shadow: 0 20px 40px -15px rgba(0, 242, 255, 0.3); }
+        .premium-card:hover { transform: translateY(-8px) scale(1.01); border-color: #00f2ff; box-shadow: 0 20px 40px -15px rgba(0, 242, 255, 0.2); }
         
-        /* Aura Cursor */
         #aura {
-            position: fixed; top: 0; left: 0; width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(0, 242, 255, 0.15) 0%, transparent 70%);
+            position: fixed; top: 0; left: 0; width: 350px; height: 350px;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.1) 0%, transparent 70%);
             border-radius: 50%; pointer-events: none; z-index: 9999;
-            transform: translate(-50%, -50%); transition: transform 0.1s ease-out;
+            transform: translate(-50%, -50%); transition: transform 0.08s ease-out;
         }
         #dot {
-            position: fixed; top: 0; left: 0; width: 8px; height: 8px;
+            position: fixed; top: 0; left: 0; width: 6px; height: 6px;
             background: #00f2ff; border-radius: 50%; pointer-events: none; z-index: 10000;
-            transform: translate(-50%, -50%); transition: transform 0.05s ease-out;
-            box-shadow: 0 0 15px #00f2ff;
+            transform: translate(-50%, -50%); transition: transform 0.04s ease-out;
+            box-shadow: 0 0 10px #00f2ff;
         }
 
-        /* Magnetic Button Base */
-        .magnetic-btn { display: inline-block; transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); z-index: 10; }
-
-        /* Modal Blur */
-        .modal-overlay { background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); }
+        .magnetic-btn { display: inline-block; transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); }
+        .modal-overlay { background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); }
         
-        @media (min-width: 769px) {
-            body { cursor: none; }
-        }
-        
-        @media (max-width: 768px) {
-            body { cursor: auto; }
-            #aura, #dot { display: none; }
-        }
+        @media (min-width: 769px) { body { cursor: none; } }
+        @media (max-width: 768px) { body { cursor: auto; } #aura, #dot { display: none; } }
     </style>
 </head>
 <body class="selection:bg-primary/30">
@@ -137,333 +132,355 @@
             <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center font-bold text-black shadow-lg">S</div>
             <span class="text-xl font-extrabold tracking-tighter neon-text font-space">StudioEngine</span>
         </div>
-        <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide uppercase opacity-70">
-            <a href="#features" class="hover:text-primary transition-all hover:tracking-widest">Fonctionnalités</a>
-            <a href="#workflow" class="hover:text-primary transition-all hover:tracking-widest">Workflow</a>
-            <a href="#pricing" class="hover:text-primary transition-all hover:tracking-widest">Tarifs</a>
+        <div class="hidden md:flex space-x-8 text-xs font-semibold tracking-wide uppercase opacity-70">
+            <a href="#features" class="hover:text-primary transition-all">Fonctionnalités</a>
+            <a href="#fallback" class="hover:text-primary transition-all">Résilience</a>
+            <a href="#faq" class="hover:text-primary transition-all">F.A.Q</a>
+            <a href="#pricing" class="hover:text-primary transition-all">Acquérir la Forge</a>
         </div>
-        <button onclick="toggleModal('login-modal')" class="magnetic-btn px-6 py-2 bg-primary text-black font-black rounded-full text-xs hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,242,255,0.4)]">SE CONNECTER</button>
+        <button onclick="toggleModal('login-modal')" class="magnetic-btn px-5 py-2 bg-primary text-black font-black rounded-full text-[10px] hover:scale-105 transition-transform shadow-[0_0_15px_rgba(0,242,255,0.3)]">ACCÈS CLIENT</button>
     </nav>
 
     <!-- Hero Section -->
     <header class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 gradient-bg">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-secondary/15 blur-[150px] rounded-full -z-10 animate-pulse-slow"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-secondary/10 blur-[130px] rounded-full -z-10 animate-pulse-slow"></div>
         
-        <div class="inline-block px-5 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-[10px] font-black tracking-[0.2em] uppercase mb-8 shadow-[0_0_15px_rgba(0,242,255,0.1)]">
-            Industrial Autonomous Engine V26.6
+        <div class="inline-block px-4 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-[9px] font-black tracking-[0.25em] uppercase mb-6">
+            AUTONOMOUS VIDEO FACTORY V65.0 GOLD
         </div>
         
-        <h1 class="text-6xl md:text-9xl font-black tracking-tighter mb-10 font-space leading-[0.9] perspective-1000">
-            DOMINEZ <br>
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-secondary animate-glow">L'AUTOMATE</span>
+        <h1 class="text-5xl md:text-8xl font-black tracking-tighter mb-8 font-space leading-[0.95]">
+            POSSÉDEZ VOTRE <br>
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-secondary animate-glow">EMPIRE DE VIDEOS IA</span>
         </h1>
         
-        <p class="text-lg md:text-2xl text-gray-400 max-w-3xl mb-14 font-light leading-relaxed">
-            L'usine de forge de contenu multilingue la plus évoluée. <br> 
-            <span class="text-white/80 font-medium">Zéro montage. Zéro friction. Profit maximum.</span>
+        <p class="text-base md:text-xl text-gray-400 max-w-2xl mb-12 font-light leading-relaxed">
+            Forgez du contenu haut de gamme 24h/24 sur YouTube, TikTok & Reels. <br> 
+            <span class="text-white/80 font-medium">Code source souverain. Déploiement multiplateforme (PC, Mac, VPS).</span>
         </p>
         
-        <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8">
-            <a href="#pricing" class="magnetic-btn px-12 py-6 bg-gradient-to-r from-primary to-secondary text-black font-black rounded-2xl text-xl hover:shadow-[0_0_40px_rgba(0,242,255,0.5)] transition-all">
-                DÉMARRER L'URANIUM
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+            <a href="#pricing" class="magnetic-btn px-10 py-5 bg-gradient-to-r from-primary to-secondary text-black font-black rounded-xl text-lg hover:shadow-[0_0_30px_rgba(0,242,255,0.4)] transition-all">
+                OBTENIR LE CODE SOURCE
             </a>
-            <a href="https://github.com/blackkillers/studioilan" target="_blank" class="magnetic-btn px-12 py-6 glass rounded-2xl text-xl font-bold hover:bg-white/10 transition-all flex items-center justify-center border-white/20">
-                <svg class="w-7 h-7 mr-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                REJOINDRE LE NOYAU
+            <a href="https://github.com/blackkillers/studioilan" target="_blank" class="magnetic-btn px-10 py-5 glass rounded-xl text-lg font-bold hover:bg-white/5 transition-all flex items-center justify-center border-white/10">
+                EXPLORER LES BRANCHES
             </a>
         </div>
         
-        <div class="mt-24 opacity-30 animate-float">
-            <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        <div class="mt-20 opacity-20 animate-float">
+            <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
         </div>
     </header>
 
-    <!-- Features Section -->
-    <section id="features" class="py-32 px-6 md:px-12 bg-dark-bg">
+    <!-- Interactive Features Section -->
+    <section id="features" class="py-24 px-6 md:px-12 bg-dark-bg border-t border-white/5">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-24">
-                <h2 class="text-4xl md:text-6xl font-black mb-6 font-space">Ingénierie de Précision</h2>
-                <p class="text-gray-500 font-medium tracking-widest uppercase text-sm">Quatre piliers. Une seule victoire.</p>
-                <div class="w-32 h-1 bg-gradient-to-r from-primary to-transparent mx-auto mt-6"></div>
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-black mb-4 font-space">Souveraineté & Précision</h2>
+                <p class="text-gray-500 font-semibold tracking-widest uppercase text-xs">Architecturé pour dominer la création de Shorts</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-transparent mx-auto mt-4"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="premium-card glass p-10 rounded-[2.5rem] border-white/5 bg-gradient-to-br from-white/5 to-transparent">
-                    <div class="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center mb-8 shadow-[0_0_20px_rgba(0,242,255,0.2)]">
-                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <div class="premium-card glass p-8 rounded-3xl bg-gradient-to-br from-white/2 to-transparent border-white/5">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-5 font-space">Orchestration IA</h3>
-                    <p class="text-gray-400 text-base leading-relaxed">Agents autonomes spécialisés dans la conversion. Ils ne rédigent pas, ils hypnotisent.</p>
+                    <h3 class="text-xl font-bold mb-4 font-space text-white">Symmetric Triple-OS</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Trois branches d'exécution distinctes et synchronisées : <strong>Windows</strong> (CUDA RTX), <strong>macOS</strong> (Apple Silicon Metal) et <strong>Debian VPS</strong> (Production 24/7 Headless).</p>
                 </div>
                 <!-- Feature 2 -->
-                <div class="premium-card glass p-10 rounded-[2.5rem] border-white/5 bg-gradient-to-br from-white/5 to-transparent">
-                    <div class="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center mb-8 shadow-[0_0_20px_rgba(0,242,255,0.2)]">
-                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                <div class="premium-card glass p-8 rounded-3xl bg-gradient-to-br from-white/2 to-transparent border-white/5">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-5 font-space">Rendu TITAN</h3>
-                    <p class="text-gray-400 text-base leading-relaxed">Pipeline FFmpeg optimisé pour GPU. Jusqu'à 100 vidéos traitées en moins de 60 minutes.</p>
+                    <h3 class="text-xl font-bold mb-4 font-space text-white">Triple Fallback LLM</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Zéro blocage d'API. Moteur hybride alternant intelligemment entre <strong>OpenRouter</strong>, le <strong>SDK Direct Google Gemini</strong>, <strong>Groq Cloud</strong>, et <strong>Ollama Local</strong>.</p>
                 </div>
                 <!-- Feature 3 -->
-                <div class="premium-card glass p-10 rounded-[2.5rem] border-white/5 bg-gradient-to-br from-white/5 to-transparent">
-                    <div class="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center mb-8 shadow-[0_0_20px_rgba(0,242,255,0.2)]">
-                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2"></path></svg>
+                <div class="premium-card glass p-8 rounded-3xl bg-gradient-to-br from-white/2 to-transparent border-white/5">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-5 font-space">Data Harvesting</h3>
-                    <p class="text-gray-400 text-base leading-relaxed">Veille mondiale en temps réel. Scraping de tendances YouTube et RSS à l'échelle industrielle.</p>
+                    <h3 class="text-xl font-bold mb-4 font-space text-white">Veille & Extraction Oracle</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Scraping chirurgical en temps réel des flux d'actualité mondiaux (WordPress RSS, France24, BBC) pour injecter des contextes factuels sans hallucination d'IA.</p>
                 </div>
-                <!-- Feature 4 -->
-                <div class="premium-card glass p-10 rounded-[2.5rem] border-white/5 bg-gradient-to-br from-white/5 to-transparent">
-                    <div class="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center mb-8 shadow-[0_0_20px_rgba(0,242,255,0.2)]">
-                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture & Resilience Panel -->
+    <section id="fallback" class="py-24 px-6 md:px-12 glass relative border-t border-white/5">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2">
+                <div class="inline-block px-3 py-1 rounded-full border border-secondary/30 bg-secondary/10 text-secondary text-[8px] font-black tracking-[0.2em] uppercase mb-4">
+                    TOLÉRANCE AUX PANNES ABSOLUE
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black mb-6 font-space">La Technologie Hybride de Secours</h2>
+                <p class="text-gray-300 text-base mb-8 leading-relaxed">
+                    Si vos crédits OpenRouter s'épuisent ou qu'un fournisseur d'API subit un temps d'arrêt, StudioEngine bascule automatiquement en quelques microsecondes vers des backends alternatifs entièrement gratuits pour garantir la continuité de votre production.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <span class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-4 text-xs font-bold mt-1">1</span>
+                        <p class="text-gray-400 text-sm"><strong class="text-white">OpenRouter stable (Principal)</strong> : Exécute Claude 3 Haiku ou Gemini 2.0 pour une narration percutante.</p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-5 font-space">Social Dominator</h3>
-                    <p class="text-gray-400 text-base leading-relaxed">Publication automatique native. Votre empire se gère pendant que vous dormez.</p>
+                    <div class="flex items-start">
+                        <span class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-4 text-xs font-bold mt-1">2</span>
+                        <p class="text-gray-400 text-sm"><strong class="text-white">Direct Gemini SDK Fallback</strong> : Bascule nativement sur votre clé Google API gratuite en cas de défaut de facturation.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-4 text-xs font-bold mt-1">3</span>
+                        <p class="text-gray-400 text-sm"><strong class="text-white">Groq Cloud (Llama 3.3 70B)</strong> : L'alternative open-source ultra-rapide à 200 tokens/sec.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 bg-zinc-950/80 p-8 rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden">
+                <div class="flex items-center space-x-2 mb-6 border-b border-white/5 pb-4">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span class="text-[10px] text-zinc-500 font-mono pl-4">engine/agents/base_agent.py</span>
+                </div>
+                <pre class="text-xs text-zinc-400 font-mono overflow-x-auto leading-relaxed">
+<code># Dynamic Fallback Core Implementation
+try:
+    response = await call_openrouter(model_a)
+except Exception as e:
+    logger.warning("OpenRouter failed. Activating Gemini SDK...")
+    try:
+        response = await call_direct_gemini_sdk()
+    except Exception as gem_err:
+        logger.warning("Gemini failed. Activating Groq Llama...")
+        response = await call_groq_llama_3_3()</code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- F.A.Q Section -->
+    <section id="faq" class="py-24 px-6 md:px-12 bg-dark-bg border-t border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black mb-4 font-space">F.A.Q Technique</h2>
+                <p class="text-gray-500">Toutes les réponses à vos exigences de déploiement</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="glass p-6 rounded-2xl border-white/5">
+                    <h3 class="text-lg font-bold mb-2 font-space text-white">Puis-je exécuter StudioEngine sur mon Mac M1/M2/M3 ?</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Absolument ! La branche <code>mac-dev</code> intègre un diagnostic dédié qui configure automatiquement le support GPU MPS (Metal) d'Apple Silicon pour exécuter Whisper et PyTorch avec accélération matérielle.</p>
+                </div>
+                <div class="glass p-6 rounded-2xl border-white/5">
+                    <h3 class="text-lg font-bold mb-2 font-space text-white">Quelles sont les dépendances système requises pour le VPS Debian ?</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Notre outil de déploiement s'assure d'installer et configurer automatiquement l'environnement virtuel (venv). Les dépendances requises comme Pillow (en mode headless sans écran) et FFmpeg natif Linux sont testées et sécurisées par le script <code>tools/HEALTH_CHECK_VPS.py</code>.</p>
+                </div>
+                <div class="glass p-6 rounded-2xl border-white/5">
+                    <h3 class="text-lg font-bold mb-2 font-space text-white">Comment fonctionne le transfert rapide de 7.89 Mo ?</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Nous avons exclu toutes les données volumineuses de cache et médias (5 Go+) pour ne conserver que la logique pure de l'algorithme. L'archive s'envoie par SFTP en moins de 3 secondes, et les dépendances lourdes se configurent de manière asynchrone directement sur le serveur.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-32 px-6 md:px-12 glass relative">
+    <section id="pricing" class="py-24 px-6 md:px-12 glass relative border-t border-white/5">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-24">
-                <h2 class="text-4xl md:text-6xl font-black mb-6 font-space">L'Investissement</h2>
-                <p class="text-gray-400">Le prix de la liberté n'a jamais été aussi clair.</p>
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-black mb-4 font-space">L'Investissement Souverain</h2>
+                <p class="text-gray-400">Prenez le contrôle total de vos flux de diffusion</p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
                 <!-- Creator Plan -->
-                <div class="premium-card bg-zinc-900/80 border border-white/5 p-12 rounded-[3rem] relative shadow-2xl">
-                    <div class="text-[10px] font-black tracking-[0.3em] text-primary uppercase mb-10">Infrastructure Partagée</div>
-                    <h3 class="text-4xl font-bold mb-3 font-space">Créateur Elite</h3>
-                    <p class="text-6xl font-black mb-12 font-space">149€ <span class="text-lg font-light text-gray-500 tracking-tight">/ mois</span></p>
-                    <ul class="space-y-6 mb-14 text-gray-300 font-medium">
-                        <li class="flex items-center"><span class="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-4 text-xs">✓</span> 30 Vidéos / mois HD</li>
-                        <li class="flex items-center"><span class="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-4 text-xs">✓</span> Support Technique 24/7</li>
-                        <li class="flex items-center"><span class="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-4 text-xs">✓</span> Connexion Telegram Alert</li>
+                <div class="premium-card bg-zinc-950/80 border border-white/5 p-10 rounded-[2.5rem] relative shadow-2xl">
+                    <div class="text-[9px] font-black tracking-[0.25em] text-primary uppercase mb-8">HÉBERGEMENT MANAGÉ</div>
+                    <h3 class="text-3xl font-bold mb-2 font-space">Abonnement SaaS Créateur</h3>
+                    <p class="text-5xl font-black mb-8 font-space">149€ <span class="text-base font-light text-gray-500">/ mois</span></p>
+                    <ul class="space-y-4 mb-10 text-gray-300 text-sm font-medium">
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-3 text-xs">✓</span> Accès à l'interface de contrôle Web</li>
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-3 text-xs">✓</span> 3 canaux de niches simultanés</li>
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center mr-3 text-xs">✓</span> Télétransmission automatisée YouTube & TikTok</li>
                     </ul>
-                    <button onclick="openOrderModal('Créateur Elite', '149')" class="magnetic-btn w-full block text-center py-5 glass text-white font-black rounded-2xl hover:bg-white/10 transition-all border-white/20 uppercase tracking-widest">S'ABONNER</button>
+                    <button onclick="openOrderModal('Abonnement SaaS Créateur', '149')" class="magnetic-btn w-full block text-center py-4 glass text-white font-black rounded-xl hover:bg-white/5 transition-all border-white/10 uppercase tracking-widest text-xs">S'ABONNER</button>
                 </div>
                 
-                <!-- Leviathan Plan -->
-                <div class="premium-card bg-white text-black p-12 rounded-[3rem] relative ring-[12px] ring-primary/20 shadow-[0_0_80px_rgba(0,242,255,0.4)] overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-secondary text-white text-[10px] font-black px-8 py-3 rotate-45 translate-x-12 translate-y-6 tracking-widest shadow-xl">FULL ACCESS</div>
-                    <div class="text-[10px] font-black tracking-[0.3em] text-secondary uppercase mb-10">Cœur Technologique</div>
-                    <h3 class="text-4xl font-bold mb-3 font-space">Leviathan V2</h3>
-                    <p class="text-6xl font-black mb-12 font-space">1499€ <span class="text-lg font-bold text-gray-400 tracking-tight">OFFRE UNIQUE</span></p>
-                    <ul class="space-y-6 mb-14 text-zinc-800 font-bold">
-                        <li class="flex items-center"><span class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center mr-4 text-xs font-black">!</span> CODE SOURCE INTÉGRAL</li>
-                        <li class="flex items-center text-primary-dark"><span class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center mr-4 text-xs">✓</span> Production ILLIMITÉE</li>
-                        <li class="flex items-center"><span class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center mr-4 text-xs">✓</span> Roadmap Lab-V28 Incluse</li>
+                <!-- Leviathan Source Plan -->
+                <div class="premium-card bg-white text-black p-10 rounded-[2.5rem] relative ring-8 ring-primary/20 shadow-2xl overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-secondary text-white text-[9px] font-black px-6 py-2 rotate-45 translate-x-8 translate-y-4 tracking-widest">PRO SOURCE</div>
+                    <div class="text-[9px] font-black tracking-[0.25em] text-secondary uppercase mb-8">SOUVERAINETÉ SANS LIMITE</div>
+                    <h3 class="text-3xl font-bold mb-2 font-space">Licence Code Source</h3>
+                    <p class="text-5xl font-black mb-8 font-space">1499€ <span class="text-xs font-bold text-gray-400">ACQUISITION UNIQUE</span></p>
+                    <ul class="space-y-4 mb-10 text-zinc-800 text-sm font-bold">
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center mr-3 text-xs font-black">!</span> CODE SOURCE PYTHON INTÉGRAL (3 Branches)</li>
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center mr-3 text-xs">✓</span> Déploiements locaux & VPS illimités</li>
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center mr-3 text-xs">✓</span> Scripts de diagnostics système inclus</li>
                     </ul>
-                    <div class="flex items-center justify-center space-x-4 mb-8">
-                        <img src="https://img.icons8.com/color/48/000000/visa.png" class="h-8" alt="Visa"/>
-                        <img src="https://img.icons8.com/color/48/000000/mastercard.png" class="h-8" alt="Mastercard"/>
-                        <img src="https://img.icons8.com/color/48/000000/paypal.png" class="h-8" alt="PayPal"/>
+                    <div class="flex items-center justify-center space-x-3 mb-6">
+                        <img src="https://img.icons8.com/color/48/000000/visa.png" class="h-6" alt="Visa"/>
+                        <img src="https://img.icons8.com/color/48/000000/mastercard.png" class="h-6" alt="Mastercard"/>
+                        <img src="https://img.icons8.com/color/48/000000/paypal.png" class="h-6" alt="PayPal"/>
                     </div>
-                    <button onclick="openOrderModal('Leviathan V2', '1499')" class="magnetic-btn w-full block text-center py-6 bg-black text-white font-black rounded-2xl hover:scale-105 transition-all text-xl shadow-2xl uppercase tracking-tighter">ACQUÉRIR L'EMPIRE</button>
+                    <button onclick="openOrderModal('Licence Code Source V65', '1499')" class="magnetic-btn w-full block text-center py-5 bg-black text-white font-black rounded-xl hover:scale-102 transition-all text-lg shadow-xl uppercase tracking-tighter">OBTENIR LE CODE SOURCE</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 px-6 md:px-12 bg-black border-t border-white/5">
+    <footer class="py-16 px-6 md:px-12 bg-black border-t border-white/5">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center">
-            <div class="mb-12 md:mb-0">
-                <span class="text-3xl font-black neon-text uppercase tracking-tighter font-space">StudioEngine</span>
-                <p class="text-gray-600 text-sm mt-4 font-medium">L'IA ne remplace pas l'homme, elle l'augmente. <br> Leviathan Industrial Robotics.</p>
-                <div class="mt-8 flex space-x-4">
-                    <button onclick="toggleModal('legal-modal')" class="text-[10px] text-gray-500 hover:text-white transition-colors underline decoration-gray-800 underline-offset-4">MENTIONS LÉGALES</button>
-                    <button onclick="toggleModal('legal-modal')" class="text-[10px] text-gray-500 hover:text-white transition-colors underline decoration-gray-800 underline-offset-4">POLITIQUE DE CONFIDENTIALITÉ</button>
-                    <button onclick="toggleModal('legal-modal')" class="text-[10px] text-gray-500 hover:text-white transition-colors underline decoration-gray-800 underline-offset-4">CGV</button>
+            <div class="mb-8 md:mb-0">
+                <span class="text-2xl font-black neon-text uppercase tracking-tighter font-space">StudioEngine</span>
+                <p class="text-gray-600 text-xs mt-3 font-medium">L'IA souveraine au service de la performance. <br> Leviathan Industrial Robotics.</p>
+                <div class="mt-6 flex space-x-4">
+                    <button onclick="toggleModal('legal-modal')" class="text-[9px] text-gray-500 hover:text-white transition-colors underline decoration-gray-800 underline-offset-4">MENTIONS LÉGALES</button>
+                    <button onclick="toggleModal('legal-modal')" class="text-[9px] text-gray-500 hover:text-white transition-colors underline decoration-gray-800 underline-offset-4">CONFIDENTIALITÉ</button>
+                    <button onclick="toggleModal('legal-modal')" class="text-[9px] text-gray-500 hover:text-white transition-colors underline decoration-gray-800 underline-offset-4">CGV</button>
                 </div>
             </div>
             <div class="flex flex-col items-end">
-                <div class="flex space-x-6 mb-8 mt-4 md:mt-0">
-                    <a href="https://github.com/blackkillers" target="_blank" class="text-gray-400 hover:text-primary transition-all"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-                    <a href="mailto:lpresentateur3@gmail.com" class="text-gray-400 hover:text-primary transition-all"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></a>
+                <div class="flex space-x-4 mb-6">
+                    <a href="https://github.com/blackkillers" target="_blank" class="text-gray-400 hover:text-primary transition-all"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                    <a href="mailto:lpresentateur3@gmail.com" class="text-gray-400 hover:text-primary transition-all"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></a>
                 </div>
-                <p class="text-zinc-600 text-[10px] font-black uppercase tracking-widest">Digital forging system V26.6 Build-03</p>
+                <p class="text-zinc-600 text-[8px] font-black uppercase tracking-widest">Digital forging system V65.0 Build-03</p>
             </div>
         </div>
     </footer>
 
     <!-- LOGIN MODAL -->
     <div id="login-modal" class="hidden fixed inset-0 z-[100] modal-overlay flex items-center justify-center p-6">
-        <div class="glass w-full max-w-md rounded-[3rem] p-12 border-primary/20 shadow-2xl relative">
-            <button onclick="toggleModal('login-modal')" class="absolute top-8 right-8 text-gray-500 hover:text-primary transition-all"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
-            <div class="text-center mb-10">
-                <h3 class="text-3xl font-black mb-3 font-space">CENTRE DE MISSION</h3>
-                <p class="text-gray-400 text-sm">Déployez votre usine IA Leviathan</p>
+        <div class="glass w-full max-w-md rounded-[2.5rem] p-10 border-primary/20 shadow-2xl relative">
+            <button onclick="toggleModal('login-modal')" class="absolute top-6 right-6 text-gray-500 hover:text-primary transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-black mb-2 font-space">CENTRE DE MISSION</h3>
+                <p class="text-gray-400 text-xs">Déployez votre usine IA Leviathan</p>
             </div>
             
-            <div class="space-y-4">
-                <button onclick="simulateLogin(this, 'Google')" class="w-full flex items-center justify-center py-4 glass hover:bg-white/10 rounded-2xl transition-all border-white/10 group">
-                    <img src="https://img.icons8.com/color/48/000000/google-logo.png" class="w-6 h-6 mr-4 group-hover:scale-110 transition-transform" alt="Google"/>
-                    <span class="font-bold">Connexion via Google</span>
+            <div class="space-y-3">
+                <button onclick="simulateLogin(this, 'Google')" class="w-full flex items-center justify-center py-3.5 glass hover:bg-white/5 rounded-xl transition-all border-white/5 group">
+                    <img src="https://img.icons8.com/color/48/000000/google-logo.png" class="w-5 h-5 mr-3 group-hover:scale-105 transition-transform" alt="Google"/>
+                    <span class="font-bold text-sm">Connexion via Google</span>
                 </button>
-                <button onclick="simulateLogin(this, 'Apple')" class="w-full flex items-center justify-center py-4 glass hover:bg-white/10 rounded-2xl transition-all border-white/10 group">
-                    <svg class="w-6 h-6 mr-4 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12.152 6.896c-.548 0-1.411-.516-2.438-.516-1.357 0-2.527.774-3.221 1.998-1.426 2.457-.365 6.063 1.011 8.053.674.974 1.485 2.072 2.538 2.072 1.007 0 1.392-.614 2.607-.614 1.207 0 1.553.614 2.612.614 1.055 0 1.774-.995 2.448-1.974.78-1.133 1.099-2.228 1.114-2.285-.022-.011-2.138-.822-2.138-3.245 0-2.031 1.654-3.002 1.731-3.048-.946-1.385-2.39-1.54-2.899-1.554-1.221-.1-2.385.516-2.405.516zM12.032 5.5c.604-.731 1.011-1.747.899-2.767-.87.035-1.92.58-2.541 1.309-.556.638-1.042 1.681-.913 2.673.974.076 1.951-.484 2.555-1.215z"/></svg>
-                    <span class="font-bold">Connexion via iCloud (Apple)</span>
+                <button onclick="simulateLogin(this, 'Apple')" class="w-full flex items-center justify-center py-3.5 glass hover:bg-white/5 rounded-xl transition-all border-white/5 group">
+                    <svg class="w-5 h-5 mr-3 group-hover:scale-105 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12.152 6.896c-.548 0-1.411-.516-2.438-.516-1.357 0-2.527.774-3.221 1.998-1.426 2.457-.365 6.063 1.011 8.053.674.974 1.485 2.072 2.538 2.072 1.007 0 1.392-.614 2.607-.614 1.207 0 1.553.614 2.612.614 1.055 0 1.774-.995 2.448-1.974.78-1.133 1.099-2.228 1.114-2.285-.022-.011-2.138-.822-2.138-3.245 0-2.031 1.654-3.002 1.731-3.048-.946-1.385-2.39-1.54-2.899-1.554-1.221-.1-2.385.516-2.405.516zM12.032 5.5c.604-.731 1.011-1.747.899-2.767-.87.035-1.92.58-2.541 1.309-.556.638-1.042 1.681-.913 2.673.974.076 1.951-.484 2.555-1.215z"/></svg>
+                    <span class="font-bold text-sm">Connexion via iCloud</span>
                 </button>
-                <button onclick="simulateLogin(this, 'GitHub')" class="w-full flex items-center justify-center py-4 glass hover:bg-white/10 rounded-2xl transition-all border-white/10 group">
-                    <svg class="w-6 h-6 mr-4 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    <span class="font-bold">Connexion via GitHub</span>
+                <button onclick="simulateLogin(this, 'GitHub')" class="w-full flex items-center justify-center py-3.5 glass hover:bg-white/5 rounded-xl transition-all border-white/5 group">
+                    <svg class="w-5 h-5 mr-3 group-hover:scale-105 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <span class="font-bold text-sm">Connexion via GitHub</span>
                 </button>
             </div>
-            
-            <p class="text-[10px] text-zinc-500 text-center mt-10 tracking-widest leading-loose">
-                En accédant à l'interface, vous acceptez les conditions industrielles de StudioEngine.
-            </p>
         </div>
     </div>
 
     <!-- Order Modal (Interactive Form V2.8) -->
     <div id="orderModal" class="fixed inset-0 modal-overlay flex items-center justify-center p-6 z-[1000] hidden">
-        <div class="glass p-8 md:p-12 rounded-[3.5rem] w-full max-w-xl shadow-2xl relative border border-white/10 max-h-[90vh] overflow-y-auto">
-            <button onclick="toggleModal('orderModal')" class="absolute top-8 right-8 text-gray-500 hover:text-white text-2xl">&times;</button>
+        <div class="glass p-6 md:p-10 rounded-[3rem] w-full max-w-lg shadow-2xl relative border border-white/10 max-h-[90vh] overflow-y-auto">
+            <button onclick="toggleModal('orderModal')" class="absolute top-6 right-6 text-gray-500 hover:text-white text-xl">&times;</button>
             
             <div id="step-info">
-                <div class="flex items-center mb-10">
-                    <div id="planIcon" class="w-16 h-16 rounded-3xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-6 shadow-2xl text-3xl">🚀</div>
+                <div class="flex items-center mb-8">
+                    <div id="planIcon" class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mr-5 shadow-2xl text-2xl">🚀</div>
                     <div>
-                        <h2 class="text-3xl font-black uppercase tracking-tighter" id="modalPlanTitle">LEVATHAN V2</h2>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-black" id="modalPlanPrice">1499€ / UNIQUE</p>
+                        <h2 class="text-2xl font-black uppercase tracking-tighter" id="modalPlanTitle">LICENCE CODE SOURCE</h2>
+                        <p class="text-[9px] text-gray-500 uppercase tracking-[0.25em] font-black" id="modalPlanPrice">1499€ / UNIQUE</p>
                     </div>
                 </div>
 
-                <form id="orderForm" class="space-y-6">
+                <form id="orderForm" class="space-y-5">
                     <input type="hidden" id="formPlanName">
                     <input type="hidden" id="formPlanPrice">
                     
-                    <div class="space-y-2">
-                        <label class="text-[10px] text-zinc-500 uppercase font-black ml-4">Identité Client</label>
-                        <input type="text" id="custName" placeholder="Ilan Cohen" class="w-full bg-white/5 border border-white/10 p-5 rounded-3xl outline-none focus:border-primary transition-all font-bold" required>
+                    <div class="space-y-1">
+                        <label class="text-[9px] text-zinc-500 uppercase font-black ml-3">Identité Client</label>
+                        <input type="text" id="custName" placeholder="Ilan Cohen" class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl outline-none focus:border-primary transition-all font-bold text-sm" required>
                     </div>
 
-                    <div class="space-y-2">
-                        <label class="text-[10px] text-zinc-500 uppercase font-black ml-4">Email de déploiement</label>
-                        <input type="email" id="custEmail" placeholder="votre@mail.com" class="w-full bg-white/5 border border-white/10 p-5 rounded-3xl outline-none focus:border-primary transition-all font-bold" required>
+                    <div class="space-y-1">
+                        <label class="text-[9px] text-zinc-500 uppercase font-black ml-3">Email de livraison</label>
+                        <input type="email" id="custEmail" placeholder="votre@mail.com" class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl outline-none focus:border-primary transition-all font-bold text-sm" required>
                     </div>
 
-                    <div class="space-y-2">
-                        <label class="text-[10px] text-zinc-500 uppercase font-black ml-4">WhatsApp de Support</label>
-                        <input type="tel" id="custPhone" placeholder="+33 ..." class="w-full bg-white/5 border border-white/10 p-5 rounded-3xl outline-none focus:border-primary transition-all font-bold">
+                    <div class="space-y-1">
+                        <label class="text-[9px] text-zinc-500 uppercase font-black ml-3">Numéro WhatsApp de Support</label>
+                        <input type="tel" id="custPhone" placeholder="+33 ..." class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl outline-none focus:border-primary transition-all font-bold text-sm">
                     </div>
 
-                    <button type="submit" class="w-full py-6 bg-white text-black font-black rounded-3xl hover:bg-primary hover:text-white transition-all shadow-2xl uppercase tracking-widest text-sm">
+                    <button type="submit" class="w-full py-4 bg-white text-black font-black rounded-2xl hover:bg-primary hover:text-white transition-all shadow-2xl uppercase tracking-widest text-xs">
                         Étape Suivante : Règlement
                     </button>
                 </form>
             </div>
 
             <div id="step-payment" class="hidden text-center">
-                <h2 class="text-3xl font-black uppercase tracking-tighter mb-4">Paiement Sécurisé</h2>
-                <p class="text-gray-500 text-xs mb-12 uppercase tracking-widest">Total à régler : <span id="paymentDisplayPrice" class="text-white font-black text-xl ml-2">0€</span></p>
+                <h2 class="text-2xl font-black uppercase tracking-tighter mb-2">Paiement Sécurisé</h2>
+                <p class="text-gray-500 text-[10px] mb-8 uppercase tracking-widest">Total à régler : <span id="paymentDisplayPrice" class="text-white font-black text-lg ml-1">0€</span></p>
                 
-                <div class="space-y-8">
-                    <div id="paypal-button-container" class="min-h-[150px]"></div>
+                <div class="space-y-6">
+                    <div id="paypal-button-container" class="min-h-[120px]"></div>
                     
-                    <div class="flex items-center justify-center space-x-4 opacity-30 my-4">
-                        <div class="w-20 h-px bg-white"></div>
-                        <span class="text-[10px] font-black uppercase">OU CARTE BLANCHE</span>
-                        <div class="w-20 h-px bg-white"></div>
+                    <div class="flex items-center justify-center space-x-3 my-2">
+                        <div class="w-16 h-px bg-white/10"></div>
+                        <span class="text-[9px] font-black uppercase text-zinc-500">OU CARTE BANCAIRE</span>
+                        <div class="w-16 h-px bg-white/10"></div>
                     </div>
 
-                    <button onclick="payWithStripe()" class="w-full py-6 glass border border-white/10 rounded-3xl font-black text-sm uppercase tracking-widest hover:bg-primary hover:text-black transition-all flex items-center justify-center group">
-                        <svg class="w-6 h-6 mr-4 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
-                        Terminal Carte Bancaire
+                    <button onclick="payWithStripe()" class="w-full py-4 glass border border-white/10 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-primary hover:text-black transition-all flex items-center justify-center group">
+                        <svg class="w-5 h-5 mr-3 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                        Régler par Carte (Stripe)
                     </button>
                 </div>
                 
-                <button onclick="backToInfo()" class="mt-12 text-[10px] text-zinc-500 uppercase hover:text-white transition-all underline underline-offset-8">Modifier mes coordonnées</button>
+                <button onclick="backToInfo()" class="mt-8 text-[9px] text-zinc-500 uppercase hover:text-white transition-all underline underline-offset-4">Modifier mes coordonnées</button>
             </div>
             
-            <p class="text-[8px] text-zinc-700 text-center mt-12 uppercase tracking-[0.4em] font-black">Leviathan Encryption Protocol Active</p>
+            <p class="text-[7px] text-zinc-700 text-center mt-8 uppercase tracking-[0.3em] font-black">Leviathan Encryption Protocol Active</p>
+        </div>
+    </div>
+
+    <!-- MENTIONS LEGALES MODAL -->
+    <div id="legal-modal" class="hidden fixed inset-0 z-[100] modal-overlay flex items-center justify-center p-6">
+        <div class="glass w-full max-w-2xl rounded-[2.5rem] p-10 border-white/5 shadow-2xl relative max-h-[80vh] overflow-y-auto">
+            <button onclick="toggleModal('legal-modal')" class="absolute top-6 right-6 text-gray-500 hover:text-white transition-all"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <h3 class="text-2xl font-black mb-6 font-space">Mentions Légales & Conditions</h3>
+            <div class="space-y-4 text-xs text-gray-400 leading-relaxed">
+                <p><strong>1. Éditeur du Site :</strong> StudioEngine est un projet édité de manière souveraine par Leviathan Industrial Robotics.</p>
+                <p><strong>2. Propriété Intellectuelle :</strong> L'acquisition du code source octroie un droit d'usage commercial illimité pour l'acheteur. Toute revente publique ou redistribution non autorisée du code brut est interdite.</p>
+                <p><strong>3. Responsabilité :</strong> StudioEngine décline toute responsabilité concernant les contenus créés et diffusés par les utilisateurs de sa technologie autonome sur les plateformes tierces.</p>
+            </div>
         </div>
     </div>
 
     <script>
-        // GLOBAL CONFIG (Imperial Parameters)
         const API_BASE = "https://debian.tapir-grouse.ts.net";
         const GOOGLE_CLIENT_ID = "562740318749-i83rj55sbh827thj2e13e2ctqpsfd6jn.apps.googleusercontent.com";
         const REDIRECT_URI = "https://web-production-87108.up.railway.app/api/auth/google/callback";
-        const OBS_PLATFORM = "aHR0cHM6Ly93ZWItcHJvZHVjdGlvbi04NzEwOC51cC5yYWlsd2F5LmFwcC8=";
-        // REAL GOOGLE AUTH (Empire Mode - Direct Redirect)
+        
         function googleLogin(btn) {
             const span = btn.querySelector('span');
-            span.innerText = "REDIRECTION GOOGLE...";
-            btn.classList.add('opacity-50', 'pointer-events-none');
-
+            span.innerText = "REDIRECTION...";
             const scopes = encodeURIComponent('openid email profile https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/photoslibrary.readonly');
-            
-            // Construction de l'URL OAuth2 officielle (Direct Redirect)
-            const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
-                           `client_id=${GOOGLE_CLIENT_ID}&` +
-                           `redirect_uri=${encodeURIComponent(REDIRECT_URI)}&` +
-                           `response_type=code&` +
-                           `scope=${scopes}&` +
-                           `access_type=offline&` +
-                           `prompt=select_account consent`; // SÉLECTION DE COMPTE FORCÉE
-
-            // Envoi vers la page Google officielle
-            window.location.href = authUrl;
+            window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=code&scope=${scopes}&access_type=offline&prompt=select_account consent`;
         }
 
-        // REAL APPLE AUTH (iCloud Empire)
-        function appleLogin(btn) {
-            const APPLE_CLIENT_ID = "YOUR_APPLE_SERVICES_ID"; // [A REMPLIR]
-            if (APPLE_CLIENT_ID.includes("YOUR_APPLE_SERVICES_ID")) {
-                alert("⚠️ CONFIGURATION REQUISE : Tu dois entrer ton APPLE_CLIENT_ID pour activer iCloud.");
-                return;
-            }
-            const authUrl = `https://appleid.apple.com/auth/authorize?` +
-                           `client_id=${APPLE_CLIENT_ID}&` +
-                           `redirect_uri=${encodeURIComponent(REDIRECT_URI)}&` +
-                           `response_type=code&` +
-                           `scope=name email&` +
-                           `response_mode=form_post`;
-            window.location.href = authUrl;
-        }
-
-        // GITHUB AUTH (Empire Mode)
-        function githubLogin(btn) {
-            const GITHUB_CLIENT_ID = "YOUR_GITHUB_CLIENT_ID"; // [A REMPLIR]
-            if (GITHUB_CLIENT_ID.includes("YOUR_GITHUB_CLIENT_ID")) {
-                alert("⚠️ CONFIGURATION REQUISE : Tu dois entrer ton GITHUB_CLIENT_ID dans index.html.");
-                return;
-            }
-            window.location.href = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&scope=user,repo&state=empire_github`;
-        }
-
-        // SIMULATED AUTH Fallback
         function simulateLogin(btn, provider) {
             if (provider === 'Google') {
                 googleLogin(btn);
-                return;
+            } else {
+                alert(`⚠️ La connexion via ${provider} requiert une configuration de vos identifiants dans config/.env.`);
             }
-            if (provider === 'Apple') {
-                appleLogin(btn);
-                return;
-            }
-            if (provider === 'GitHub') {
-                githubLogin(btn);
-                return;
-            }
-            window.location.href = atob(OBS_PLATFORM);
         }
 
-        // AURA CURSOR Logic (Robust)
+        // AURA CURSOR Logic
         const aura = document.getElementById('aura');
         const dot = document.getElementById('dot');
         
         if (window.innerWidth > 768) {
-            document.body.style.cursor = 'none';
             document.addEventListener('mousemove', (e) => {
-                aura.style.opacity = "1";
-                dot.style.opacity = "1";
                 aura.style.left = e.clientX + 'px';
                 aura.style.top = e.clientY + 'px';
                 dot.style.left = e.clientX + 'px';
@@ -471,48 +488,28 @@
             });
         }
 
-        // MAGNETIC BUTTONS Logic (Optimized for Clicks)
+        // MAGNETIC BUTTONS
         const magneticBtns = document.querySelectorAll('.magnetic-btn');
         magneticBtns.forEach(btn => {
             btn.addEventListener('mousemove', (e) => {
                 const position = btn.getBoundingClientRect();
                 const x = (e.clientX - position.left) - (position.width / 2);
                 const y = (e.clientY - position.top) - (position.height / 2);
-                btn.style.transform = `translate3d(${x * 0.2}px, ${y * 0.2}px, 0)`;
+                btn.style.transform = `translate3d(${x * 0.25}px, ${y * 0.25}px, 0)`;
             });
             btn.addEventListener('mouseleave', () => {
                 btn.style.transform = `translate3d(0, 0, 0)`;
             });
         });
 
-        // MODAL TOGGLE Logic
         function toggleModal(modalId) {
             const modal = document.getElementById(modalId);
             modal.classList.toggle('hidden');
         }
 
-        // FEATURE HOVER Effect
-        document.querySelectorAll('.premium-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 242, 255, 0.08) 0%, transparent 60%)`;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.background = 'rgba(255, 255, 255, 0.03)';
-            });
-        });
-
-        // MASKED URLS (Railway Fallback)
-        function accessPlatform() {
-            toggleModal('login-modal');
-        }
-
-        // --- INDUSTRIAL PAYMENT FLOW (V2.8) ---
         function openOrderModal(plan, amount) {
             document.getElementById('modalPlanTitle').innerText = plan.toUpperCase();
-            document.getElementById('modalPlanPrice').innerText = `${amount}€ / ${plan.includes('Elite') ? 'MOIS' : 'UNIQUE'}`;
+            document.getElementById('modalPlanPrice').innerText = `${amount}€ / ${plan.includes('SaaS') ? 'MOIS' : 'ACQUISITION UNIQUE'}`;
             document.getElementById('formPlanName').value = plan;
             document.getElementById('formPlanPrice').value = amount;
             
@@ -542,30 +539,19 @@
             }).render('#paypal-button-container');
         }
 
-        async function payWithStripe() {
+        function payWithStripe() {
             const name = document.getElementById('custName').value;
             const email = document.getElementById('custEmail').value;
             const amount = document.getElementById('formPlanPrice').value;
-            window.location.href = `${API_BASE}/api/iptv/stripe/checkout?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&amount=${amount}&method=MainSite`;
+            window.location.href = `${API_BASE}/api/iptv/stripe/checkout?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&amount=${amount}&method=StudioEngineCheckout`;
         }
 
         function finalizeOrder(method) {
             const name = document.getElementById('custName').value;
             const email = document.getElementById('custEmail').value;
             const amount = document.getElementById('formPlanPrice').value;
-            // On utilise le moteur IPTV mais avec un flag "MainSite" pour la diff
-            window.location.href = `${API_BASE}/iptv/payment-success?name=${encodeURIComponent(name)}&amount=${amount}&email=${encodeURIComponent(email)}&method=${method}&origin=MainStudio`;
+            window.location.href = `${API_BASE}/iptv/payment-success?name=${encodeURIComponent(name)}&amount=${amount}&email=${encodeURIComponent(email)}&method=${method}&origin=StudioEngine`;
         }
-
-        // AUTO-OPEN LOGIN MODAL
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const modal = document.getElementById('login-modal');
-                if (modal && modal.classList.contains('hidden')) {
-                    toggleModal('login-modal');
-                }
-            }, 2500); // 2.5 seconds delay
-        });
     </script>
 </body>
 </html>
